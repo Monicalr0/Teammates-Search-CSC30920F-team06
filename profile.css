@@ -1,0 +1,61 @@
+.userProfilePicture{
+
+	/* Add properties below */
+	width: 200px;
+	margin-top:10px;
+	margin-bottom: 10px;
+	margin-left: 10px;
+	margin-right: 10px;
+	text-align: center;
+	float: left;
+}
+
+.userInfoCard{
+	margin-left: 50px;
+	margin-top: 30PX;
+	margin-bottom: auto;
+}
+
+div.gallery {
+  margin: 5px;
+  border: 1px solid #ccc;
+  float: left;
+  width: 180px;
+}
+
+div.gallery:hover {
+  border: 1px solid #777;
+}
+
+div.gallery img {
+  width: 100%;
+  height: auto;
+}
+
+div.desc {
+  padding: 15px;
+  text-align: center;
+}
+
+#commentContainer {
+	/* Add properties below */
+	width: 740px;
+}
+
+
+.othersProfilePicture{
+
+	/* Add properties below */
+	width: 150px;
+	margin-top:10px;
+	margin-bottom: 10px;
+	margin-left: 10px;
+	margin-right: 10px;
+	text-align: center;
+	float: left;
+}
+
+.card-horizontal {
+  display: flex;
+  flex: 1 1 auto;
+}
