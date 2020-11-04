@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Make Comment</title>
+
+    <!-- Bootstrap CSS -->
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+	<link rel="stylesheet" href="commentPage.css">
+
+</head>
+
+ <body>
+     <header>
+      <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#AccountMenu" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="AccountMenu">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a href="login.html" class="m-1 btn btn-outline-primary" >Login</a>
+            </li>
+            <li class="nav-item">
+              <a href="signup.html" class="m-1 btn btn-outline-primary" >Sign up</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    	<!-- The Comment Card -->
+ 	<!-- <div id='CommentCard'>
+ 			<ul>
+	 			<li><a href="">Proof</a></li>
+	 			<li><a href="">Rate</a></li>
+ 			</ul>
+ 		</div> -->
+
+<!-- Search Bar -->
+      <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <h1 class="display-4 mb-3"><p class="blue">Make Comments </p></h1>
+          <form class="form-inline" name="searchForm">
+            <div class="input-group input-group-lg w-100 mb-3">
+              <input type="text" name="game" class="form-control" placeholder="Comment on who">
+              <div class="input-group-append">
+                <button class="btn btn-outline-secondary" type="submit" id="teammateSearchButton"><i class="fas fa-search"></i> Search</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+
+
+<!-- Comment Card -->
+<div class="container" style="position: relative; margin-top: 50px">
+ 	<div class="card" style="width: 30rem; height: 25rem;float: left">
+  	<ul class="list-group list-group-flush">
+    	<li class="list-group-item"><strong>Proof:</strong>
+    	&nbsp;&nbsp;&#10051;&nbsp;Drop Here&nbsp;&#10051; &nbsp;
+      	&nbsp;or&nbsp;&nbsp;
+    	<a href="#" class="btn btn-outline-secondary">select file</a>
+    	</li>
+
+    	<li class="list-group-item"><strong>Rate:</strong>
+    	&nbsp;&nbsp;
+ 		&#9733;&#9733;&#9733;&#9734;&#9734;   	
+    	</li>
+
+    	<li class="list-group-item"><strong>Report:</strong>
+    	&nbsp;&nbsp;
+ 		<button class="btn btn-outline-secondary btn-sm disabled"></button>&nbsp;Yes
+ 		&nbsp;&nbsp;
+ 		<button class="btn btn-outline-secondary btn-sm active"aria-pressed="true"></button>&nbsp;No
+    	</li>
+
+    	<li class="list-group-item"><strong>Comment:</strong>
+    	<br>
+    	<br>
+    	<div class="card" style="width: 25rem; height: 7rem">
+ 		<div class="card-body">
+    	Give some comments about your gaming experiences!
+  		</div>
+		</div>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;
+		<button class="btn btn-outline-secondary btn-sm" type="submit" value="Submit" style="margin-top: 8px">submit</button>
+   		 </li>
+
+  	</ul>
+	</div>
+</div>
+
+	<!----- Second Comment card -------->
+<div class="container" style="position: relative; margin-top: 50px">
+	<div class="card" style="width: 30rem; height: 25rem; float: right">
+  	<ul class="list-group list-group-flush">
+    	<li class="list-group-item"><strong>Proof:</strong>
+    	&nbsp;&nbsp;&#10051;&nbsp;Drop Here&nbsp;&#10051; &nbsp;
+      	&nbsp;or&nbsp;&nbsp;
+    	<a href="#" class="btn btn-outline-secondary">select file</a>
+    	</li>
+
+    	<li class="list-group-item"><strong>Rate:</strong>
+    	&nbsp;&nbsp;
+ 		&#9734;&#9734;&#9734;&#9734;&#9734;   	
+    	</li>
+
+    	<li class="list-group-item"><strong>Report:</strong>
+    	&nbsp;&nbsp;
+ 		<button class="btn btn-outline-secondary btn-sm active"></button>&nbsp;Yes
+ 		&nbsp;&nbsp;
+ 		<button class="btn btn-outline-secondary btn-sm disabled"></button>&nbsp;No
+    	</li>
+
+    	<li class="list-group-item"><strong>Reason:</strong>
+    	&nbsp;&nbsp;
+ 		<button class="btn btn-outline-secondary btn-sm"></button>&nbsp;Offensive
+ 		&nbsp;&nbsp;
+ 		<button class="btn btn-outline-secondary btn-sm"></button>&nbsp;AFK
+ 		&nbsp;&nbsp;
+ 		<button class="btn btn-outline-secondary btn-sm"></button>&nbsp;Other
+    	</li>
+
+    	<li class="list-group-item"><strong>Comment:</strong>
+    	<br>
+    	<br>
+    	<div class="card" style="width: 25rem; height: 7rem">
+ 		<div class="card-body">
+    	Tell us what happened!
+  		</div>
+		</div>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;
+		<button class="btn btn-outline-secondary btn-sm" type="submit" value="Submit" style="margin-top: 8px">submit</button>
+   		 </li>
+
+  	</ul>
+	</div>
+</div>
+
+          
+
+     </body>
+
+ </html>
