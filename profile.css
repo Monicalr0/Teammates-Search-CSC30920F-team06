@@ -11,6 +11,7 @@
 }
 
 .userInfoCard{
+	width: 410px;
 	margin-left: 50px;
 	margin-top: 30PX;
 	margin-bottom: auto;
@@ -37,9 +38,10 @@ div.desc {
   text-align: center;
 }
 
+
 #commentContainer {
 	/* Add properties below */
-	width: 740px;
+	width: 720px;
 }
 
 
@@ -72,4 +74,8 @@ div.desc {
 .commentDate{
 	margin-right: 0px;
 	float: right;
+}
+
+#reportComment{
+	float:right;
 }
