@@ -26,31 +26,35 @@ function Login_process(e){
         //check if the password is correct
         if (input_pass == userDB[input_email] )
         {
+            $('#invalid_alert').hide()
             //avaliable user turn to profile page
             window.location.href = "index.html";
         }
         else
         {
-            $('#invalid_alert').show()
-            setTimeout(function(){$('#invalid_alert').hide()} ,2500)
+
+            $('#invalid_alert').hide()
+            setTimeout(function(){$('#invalid_alert').show()} ,150)
+
         }
     }
-    if(adminDB.hasOwnProperty(input_email))
+    else if(adminDB.hasOwnProperty(input_email))
     {
         if (input_pass == adminDB[input_email] )
         {
+            $('#invalid_alert').hide()
             //avaliable user turn to profile page
-            window.location.href = "index.html";
+            window.location.href = "admin.html";
         }
         else
         {
-            $('#invalid_alert').show()
-            setTimeout(function(){$('#invalid_alert').hide()} ,2500)
+            $('#invalid_alert').hide()
+            setTimeout(function(){$('#invalid_alert').show()} ,150)
         }
     }
     else
     {
-        $('#invalid_alert').show()
-        setTimeout(function(){$('#invalid_alert').hide()} ,2500)
+        $('#invalid_alert').hide()
+        setTimeout(function(){$('#invalid_alert').show()} ,150)
     }
 }
