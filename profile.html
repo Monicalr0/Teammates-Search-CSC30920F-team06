@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 	<link rel="stylesheet" href="profile.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     
  </head>
@@ -26,7 +27,7 @@
         <div class="collapse navbar-collapse" id="AccountMenu">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-                <a href="login.html" class="m-1 btn btn-outline-primary" >Login</a>
+                <a href="profile.html" class="m-1 btn btn-outline-primary" >user</a>
             </li>
             <li class="nav-item">
               <a href="signup.html" class="m-1 btn btn-outline-primary" >Sign up</a>
@@ -78,30 +79,35 @@
 				</div>
 
 			 	<div class = "card-body" id="messageBoard">
-			 		<div class = "container bg-light" id = "message">
-				 		<div>
-						  	<p>Hello, I'm interesting to form team with you, please dm me if you are interested. </p>
-						  	<img src="user2.jpg" alt="User2" class="alignright" id="messageImage">
+			 		<div class = "container" id = "message">
+						<div class="card-body bg-light">
+							<img src="user2.jpg" alt="User2" class="alignleft" id="messageImage">
+						 	<p>Hello, I'm interesting to form team with you, please dm me if you are interested. </p>
+						 	<span class="alignright messageDate"> 2020/10/31 </span>
+						 	<br>
 				 		</div>
 				 	</div>	
-				 	<div class="talk_input">
-<!-- 						            <select class="whotalk" id="who">
+<!-- 				 	<div class="talk_input">
+						            <select class="whotalk" id="who">
 						                <option value="0">A说：</option>
 						                <option value="1">B说：</option>
-						            </select> -->
+						            </select>
 					            <input type="text" class="talk_word" id="talkwords">
 					            <input type="btn" value="send" class="talk_sub" id="talksub">
-					</div>	
+					</div>	 -->
 				</div>
 			</div>
 
 	 	<!-- User Profile -->
         <div class="card bg-light ">
-            <img src="user1.jpg" alt="User Profile Picture", class = "userProfilePicture">
+            <img src="user.jpg" alt="User Profile Picture", class = "userProfilePicture">
             <br/>
-            <a href="#" class="btn btn-primary w-50 mx-auto">Message</a>
-            <br/>
-            <a href="#" class="btn btn-primary w-50 mx-auto">Form Teams</a>
+            <a href="#" class="btn btn-primary w-50 mx-auto">Edit</a>
+            <li class = "socialList">
+            <!-- this will be link to user account page  -->
+            <a href="https://www.facebook.com/" class= "fa fa-facebook inline"></a><strong> user</strong>
+            <a href="https://twitter.com/home" class= "fa fa-twitter inline"></a> <strong> user</strong>
+            </li>
         </div>
 
         <div class="card">
@@ -178,7 +184,7 @@
 
 			        <div class = "card-body">
 			        	<div class = "commentUserInfo">
-			        		<strong>User02 (3.5)</strong> 
+			        		<strong>User2</strong> 
 			        		<span class="commentDate">2020/11/01</span>
 			        		<br>
 			        		<strong>Rate:</strong><span> &#9733 &#9733 &#9733 &#9733 &#9733 </span>
@@ -204,7 +210,7 @@
 
 			        <div class = "card-body">
 			        	<div class = "commentUserInfo">
-			        		<strong>User03(2.5)</strong> 
+			        		<strong>User3</strong> 
 			        		<span class="commentDate">2020/10/24</span>
 			        		<br>
 			        		<strong>Rate:</strong><span> &#9734 &#9734 &#9734 &#9734 &#9734 </span>
