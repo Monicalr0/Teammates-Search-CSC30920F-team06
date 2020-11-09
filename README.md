@@ -21,6 +21,9 @@ this two page are index page of the website, users will use this page to search 
 this is the user profile page, user can send massage to this person and also post comment to this person by using the left coner's message box. user can also filter the comment for this person by using the filter on the lower right coner. user itself can send report on certern comment by using the report button. user it self can also edit it own information.
 
 <br>               
-<strong> admin.html:</strong>
+<strong> admin_user.html and admin_comment.html:</strong>
 <br>
-after admin login they will be directed to this page and in this page you can see a list of user and their status, admin can user filtering or searching function to filter certern user and to decied how to process by using inactive button. 
+both pages are belongs to admin and only admin can access. after login using admin account user will be directed to admin user page. admin can switch between two pages using right coner button. in the admin_user page admin can see all the user here and admin can also search name or fillter the user by it's activity. in the admin comments page admin can see all the comments and also can either search or filter by properities. in admin user page, admin can use inactive button and incative selection to ban user for a period of time an for comments admin can ban certen commt.
+
+
+
