@@ -116,7 +116,6 @@ div.desc {
 
 .messageDate {
 	color: lightgrey;
-	margin-bottom: 3px;
 }
 
 
@@ -129,11 +128,12 @@ div.desc {
     float: left;
 }
 
-.footer
-{
-	position:absolute;
-	bottom: 0;
+.submitMessage{
+  position: absolute;
+  bottom: 10px
 }
+
+
 .fa {
   margin-left: 35px;
   padding: 5px;
@@ -156,4 +156,12 @@ div.desc {
 
 .socialList{
 	list-style-type:none;
+}
+
+.editInput{
+	width:200px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 10px;
+	margin-bottom: 5px;
 }
