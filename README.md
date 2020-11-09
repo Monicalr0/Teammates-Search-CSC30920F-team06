@@ -25,5 +25,16 @@ this is the user profile page, user can send massage to this person and also pos
 <br>
 both pages are belongs to admin and only admin can access. after login using admin account user will be directed to admin user page. admin can switch between two pages using right coner button. in the admin_user page admin can see all the user here and admin can also search name or fillter the user by it's activity. in the admin comments page admin can see all the comments and also can either search or filter by properities. in admin user page, admin can use inactive button and incative selection to ban user for a period of time an for comments admin can ban certen commt.
 
+<br>               
+<strong> commentPage.html and CommentSucceed.html:</strong>
+<br>
+commentPage can be accessed from user's profel, and give this player a comment or report depends which one the user wants. user can also add picture using the upload button and use the submit button to submit. after the comment sucessful submit it will turns to the CommentSucceed.html where it shows comment sucess and return to idnex by return link.
+<br>
+<br>
+<h2><strong>third-party libraries:</strong></h2>
+
+<br>
+<br>
+this website mainly use bootstrap to style the button and form location which also use some of Jquery
 
 
