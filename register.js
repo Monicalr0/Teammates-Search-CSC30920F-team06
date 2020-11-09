@@ -7,7 +7,7 @@ sign_form.addEventListener('submit', register_process);
 function register_process(e){
     e.preventDefault();
     //get the input
-    const input_email = sign_form.querySelector('#inputEmail3').value
+    const input_email = sign_form.querySelector('#inputUser3').value
     const input_pass = sign_form.querySelector('#inputPassword3').value
     const input_Address = sign_form.querySelector('#inputaddress3').value
     let input_check = $('#gridCheck1').is(':checked')
@@ -17,11 +17,11 @@ function register_process(e){
     // here would have a server call to get the json from api
     //in phase 1 i will just hard code here
     const userDB={
-        "user1@user.com" : "user1",
-        "user2@user.com" : "user2"
+        "user1" : "user1",
+        "user2" : "user2"
     }
     const adminDB={
-        "admin@admin.com" : "admin"
+        "admin" : "admin"
     }
     checked = true
     //first check if the check box is checked yet
