@@ -1,3 +1,13 @@
+#messageContainer{
+	float: left;
+	width: 300px;
+	margin-left: 25px;
+	margin-right: 20px;
+}
+
+#userProfile{
+	max-width: 650px;
+}
 .userProfilePicture{
 
 	/* Add properties below */
@@ -39,9 +49,9 @@ div.desc {
 }
 
 
-#commentContainer {
+#commentCard {
 	/* Add properties below */
-	width: 720px;
+	width: 700px;
 }
 
 
@@ -78,4 +88,40 @@ div.desc {
 
 #reportComment{
 	float:right;
+}
+
+.filterContainer{
+	float: left;
+	width: 300px;
+	margin-left: 25px;
+	margin-right: 20px;
+}
+
+#messageImage
+{
+	width:50px;
+	border-radius: 50%;
+	text-align: right;
+}
+
+#messageBoard
+{
+	border-color: blue;
+}
+
+#message{
+	width: 270px;
+}
+
+
+.alignright {
+    display: inline;
+    float: right;
+}
+
+
+.footer
+{
+	position:absolute;
+	bottom: 0;
 }
