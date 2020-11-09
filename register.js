@@ -17,11 +17,11 @@ function register_process(e){
     // here would have a server call to get the json from api
     //in phase 1 i will just hard code here
     const userDB={
-        "user1@zzz.com" : "123123",
-        "user2@zzz.com" : "1212"
+        "user1@user.com" : "user1",
+        "user2@user.com" : "user2"
     }
     const adminDB={
-        "user3@zzz.com" : "1212"
+        "admin@admin.com" : "admin"
     }
     checked = true
     //first check if the check box is checked yet
@@ -65,6 +65,16 @@ function register_process(e){
     {
         //here we need to send information to the server but here we are using fake data
         //so we will just creat a json
-        window.location.href = "login.html";
+      const  user_pass={
+            input_email: input_pass
+        }
+      const  user_address={
+          input_email: input_Address
+        }
+
+        $('#success_alert').show()
+        setTimeout(function(){window.location.href = "login.html"} ,2500)
+
+
     }
 }
