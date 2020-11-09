@@ -59,56 +59,117 @@
 	</div>
  -->
 
+ 	<!-- Message Board -->
+<!--  	<div class="card">
+ 		<div class="messageContainer">
+		  	<p>Hello. How are you today?</p>
+		  	<span class="time-right">11:00</span>
+ 		</div>
+	  	
+	</div>
+ -->
+ <div class="container-fluids mb-4">
+ 	<div class="row">
+		 	<div class="card" id = "messageContainer">
+		 		<div class = "card-header">
+				 		<div>
+						  	<strong>Message</strong>
+				 		</div>		
+				</div>
 
- 	<!-- User Profile -->
-	<div class="container mb-3">
-		<div class="row justify-content-center">
-	        <div class="card bg-light ">
-	            <img src="user1.jpg" alt="User Profile Picture", class = "userProfilePicture">
-	            <br/>
-	            <a href="#" class="btn btn-primary w-50 mx-auto">Message</a>
-	            <br/>
-	            <a href="#" class="btn btn-primary w-50 mx-auto">Form Teams</a>
+			 	<div class = "card-body" id="messageBoard">
+			 		<div class = "container bg-light" id = "message">
+				 		<div>
+						  	<p>Hello. How are you today?</p>
+						  	<img src="user2.jpg" alt="User2" class="alignright" id="messageImage">
+				 		</div>
+						    <div class="talk_input">
+<!-- 						            <select class="whotalk" id="who">
+						                <option value="0">A说：</option>
+						                <option value="1">B说：</option>
+						            </select> -->
+					            <input type="text" class="talk_word" id="talkwords">
+					            <input type="btn" value="send" class="talk_sub" id="talksub">
+					        </div>
+				 	</div>		
+				</div>
+			</div>
+
+	 	<!-- User Profile -->
+        <div class="card bg-light ">
+            <img src="user1.jpg" alt="User Profile Picture", class = "userProfilePicture">
+            <br/>
+            <a href="#" class="btn btn-primary w-50 mx-auto">Message</a>
+            <br/>
+            <a href="#" class="btn btn-primary w-50 mx-auto">Form Teams</a>
+        </div>
+
+        <div class="card">
+    		<div class="userInfoCard">
+	            <p> 
+	            	<strong>Username: </strong> <span> User1</span>
+	            	<br><br>
+	            	<strong>About: </strong> <span> Hello, I'm user1.</span>
+	            	<br><br>
+	            	<strong>Rate: </strong> <span> &#9733 &#9733 &#9733 &#9733 &#9734</span>
+	            	<br><br>
+	            	<strong>Language: </strong> <span> English </span>
+	            	<br><br>
+	            	<strong>Reported Times: </strong> <span> 1  </span>
+	            	<strong>Reported percetage: </strong> <span> 10%</span>
+	            	<br><br>
+	            	<strong>Played Game: </strong> 
+	        	</p>
+	        	<div class="gallery">
+					 <a>
+					    <img src="PUBG.jpg" alt="Game Image">
+					 </a>
+					 <div class="desc">PUBG</div>
+				</div>
 	        </div>
+	    </div>
+   </div>
+</div>
 
-		    <div class="card">
-		    	<div class="userInfoCard">
-		            <p> 
-		            	<strong>Username: </strong> <span> User1</span>
-		            	<br><br>
-		            	<strong>About: </strong> <span> Hello, I'm user1.</span>
-		            	<br><br>
-		            	<strong>Rate: </strong> <span> &#9733 &#9733 &#9733 &#9733 &#9734</span>
-		            	<br><br>
-		            	<strong>Language: </strong> <span> English </span>
-		            	<br><br>
-		            	<strong>Reported Times: </strong> <span> 1  </span>
-		            	<strong>Reported percetage: </strong> <span> 10%</span>
-		            	<br><br>
-		            	<strong>Played Game: </strong> 
-		        	</p>
-		        	<div class="gallery">
-						 <a>
-						    <img src="PUBG.jpg" alt="Game Image">
-						 </a>
-						 <div class="desc">PUBG</div>
-					</div>
-		        </div>
-		   </div>
-    	</div>
-    </div>
+<!-- comment filter -->
+<div class = "container-fluids">
+	<div class="row">
+		<div class="column">
+			<div class="filterContainer">
+			 	<div class = "card">
+				 	<strong class="card-header">Comment Type</strong>
+                	<div class="card-body">
+	                  	<form class="form">
+		                    <div class="custom-control custom-checkbox">
+		                      <input type="checkbox" class="custom-control-input" id="filterSilver" name="filterSilver" value="silver">
+		                      <label class="custom-control-label" for="filterSilver">All</label>
+		                    </div>
 
-    <!-- Comments -->
-    <!-- 宽度调节 -->
-    <div class="container" id="commentContainer">
-		    <div class="card">
+		                    <div class="custom-control custom-checkbox">
+		                      <input type="checkbox" class="custom-control-input" id="filterGold" name="filterGold" value="gold">
+		                      <label class="custom-control-label" for="filterGold">Rate > 5</label>
+		                    </div>
+
+		                    <div class="custom-control custom-checkbox">
+		                      <input type="checkbox" class="custom-control-input" id="filterPlatinum" name="filterPlatinum" value="platinum">
+		                      <label class="custom-control-label" for="filterPlatinum">Rate < 5 </label>
+		                    </div>
+	                  	</form>	
+                  	</div>
+				</div>
+			</div>
+		</div>
+
+
+	    <!-- Comments -->
+	    <div class="column">
+		    <div class="card" id="commentCard">
 		    	<div class="card-header">
 			    Comments from previous teammates:
 			    </div>
 		    </div>
 
-
-	        <div class="card ">
+	        <div class="card " id="commentCard">
 	            <div class= "card-horizontal">
 	            	<div class="image-square-wrapper">
 		            	<img src="user2.jpg" alt="User Profile Picture", class = "
@@ -134,7 +195,7 @@
 	        </div>
 
 
-	        <div class="card ">
+	        <div class="card " id="commentCard">
 	            <div class= "card-horizontal">
 	            	<div class="image-square-wrapper">
 		            	<img src="user3.jpg" alt="User Profile Picture", class = "
@@ -158,8 +219,11 @@
 				    </div>
 	            </div>
 	        </div>
+	    </div>
+	</div>
+</div>
 
-    </div>
+
  
 
  </body>
