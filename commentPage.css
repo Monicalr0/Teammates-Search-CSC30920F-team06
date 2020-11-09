@@ -1,3 +1,8 @@
+
+
+
+/* Add BackGroundImg Or Not???????*/
+
 .card {
         margin: 0 auto; /* Added */
          /* Added */
@@ -32,4 +37,8 @@
 	margin-right: 200px;
 	text-align: center;
 
+}
+
+.specialcolor{
+	color: black;
 }

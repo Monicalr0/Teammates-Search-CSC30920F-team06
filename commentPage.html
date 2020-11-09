@@ -66,7 +66,8 @@
    <!-- style="width: 30rem; height: 25rem;float: left"> -->
   	<ul class="list-group list-group-flush">
     	<li class="list-group-item"><strong>Proof:</strong>
-    	  &nbsp;&nbsp;&#10051;&nbsp;Drop Here&nbsp;&#10051; &nbsp;&nbsp;or&nbsp;&nbsp;
+    	  &nbsp;&nbsp;&#10051;&nbsp;Drop Here
+        &nbsp;&#10051;&nbsp;&nbsp;or&nbsp;&nbsp;
     	  <a href="#" class="btn btn-outline-secondary">select file</a>
     	</li>
 
@@ -84,21 +85,14 @@
     	<li class="list-group-item"><strong>Comment:</strong>
     	  <br>
     	  <br>
-    	<div class="card CommentArea">
-       <!-- style="width: 25rem; height: 7rem"> -->
- 		<div class="card-body">
-    	Give some comments about your gaming experiences!
-  		</div>
-		</div>
-		<!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		&nbsp;&nbsp;&nbsp; -->
-		<button class="btn btn-outline-secondary btn-sm submitButton" type="submit" value="Submit">
-     <!-- style="margin-top: 8px"> -->
-   submit</button>
+    	
+            <!-- <input type="text" class="form-control CommentArea" id="Comment" aria-describedby="comments" placeholder="Tell us how about your gaming experiences!">
+         -->
+        <textarea name="Comment" class="CommentArea" placeholder="Tell us how about your gaming experiences!">
+        </textarea>
+        <form method="get" action="CommentSucceed.html" class="submitButton">
+          <button type="submit">submit</button>
+        </form>
    		 </li>
 
   	</ul>
@@ -113,7 +107,8 @@
   	<ul class="list-group list-group-flush">
 
     	<li class="list-group-item"><strong>Proof:</strong>
-    	 &nbsp;&nbsp;&#10051;&nbsp;Drop Here&nbsp;&#10051; &nbsp;&nbsp;or&nbsp;&nbsp;
+    	 &nbsp;&nbsp;&#10051;&nbsp;Drop Here
+       &nbsp;&#10051;&nbsp;&nbsp;or&nbsp;&nbsp;
     	 <a href="#" class="btn btn-outline-secondary">select file</a>
     	</li>
 
@@ -129,32 +124,30 @@
     	</li>
 
     	<li class="list-group-item"><strong>Reason:</strong>
-    	 &nbsp;&nbsp;
- 		   <button class="btn btn-outline-secondary btn-sm"></button>&nbsp;Offensive
- 		   &nbsp;&nbsp;
- 		   <button class="btn btn-outline-secondary btn-sm"></button>&nbsp;AFK
- 		   &nbsp;&nbsp;
- 		   <button class="btn btn-outline-secondary btn-sm"></button>&nbsp;Other
-    	</li>
+        <form>&nbsp;&nbsp;
+          <label class="checkbox-inline">
+              <input type="checkbox" value="">&nbsp;All
+          </label>&nbsp;&nbsp;
+          <label class="checkbox-inline">
+              <input type="checkbox" value="">&nbsp;Reported
+          </label>&nbsp;&nbsp;
+          <label class="checkbox-inline">
+              <input type="checkbox" value="">&nbsp;Problem
+          </label>&nbsp;&nbsp;
+          <label class="checkbox-inline">
+              <input type="checkbox" value="">&nbsp;Marked
+          </label>
+        </form>
 
     	<li class="list-group-item"><strong>Comment:</strong>
     	 <br>
     	 <br>
-    	<div class="card CommentArea">
-       <!-- style="width: 25rem; height: 7rem"> -->
- 		<div class="card-body">
-    	Tell us what happened!
-  		</div>
-		</div>
-		<!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		&nbsp;&nbsp;&nbsp; -->
-		<button class="btn btn-outline-secondary btn-sm submitButton" type="submit" value="Submit">
-     <!-- style="margin-top: 8px"> -->
-    submit</button>
+    	<textarea name="Comment" class="CommentArea" placeholder="Tell us what happened!">
+        </textarea>
+		
+		    <form method="get" action="CommentSucceed.html" class="submitButton">
+          <button type="submit">submit</button>
+        </form>
    		 </li>
 
   	</ul>
