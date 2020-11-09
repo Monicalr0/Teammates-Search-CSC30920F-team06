@@ -17,7 +17,7 @@ function register_process(e){
     // here would have a server call to get the json from api
     //in phase 1 i will just hard code here
     const userDB={
-        "user1" : "user1",
+        "user" : "user",
         "user2" : "user2"
     }
     const adminDB={
