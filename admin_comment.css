@@ -1,7 +1,7 @@
 .CommentFilterContainer{
 
 	margin-top: 50px;
-	margin-left:100px;
+/*	margin-left:100px;*/
 }
 
 .CommentFilterCard{
@@ -23,12 +23,7 @@
 		margin-top: 50px;
 		
 }
-/*.CommentCardContainerRight{
-		/*position: relative;*/
-		float: right;
-		margin-top: 50px;
-		margin-right: 20px;
-}*/
+
 
 .CommentCard{
 	width: 40rem;
