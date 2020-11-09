@@ -27,7 +27,7 @@
                 <a href="login.html" class="m-1 btn btn-outline-primary" >Login</a>
             </li>
             <li class="nav-item">
-              <a href="signup.html" class="m-1 btn btn-outline-primary" >Sign up</a>
+              <a href="register.html" class="m-1 btn btn-outline-primary" >Sign up</a>
             </li>
           </ul>
         </div>
@@ -41,7 +41,7 @@
           <h1 class="display-4 mb-3"><p class="blue">Teammate Search </p></h1>
           <form class="form-inline" name="searchForm">
             <div class="input-group input-group-lg w-100 mb-3">
-              <input type="text" name="game" class="form-control" placeholder="Game Title" aria-label="Game Title">
+              <input type="text" name="keywords" class="form-control" placeholder="Keyword" aria-label="Keyword">
               <div class="input-group-append">
                 <button class="btn btn-outline-secondary" type="submit" id="teammateSearchButton"><i class="fas fa-search"></i> Search</button>
               </div>
@@ -50,7 +50,7 @@
         </div>
       </div>
       
-      <!-- Filtering Players -->
+      <!-- Filtering Users -->
       <section id="teammate Results">
         <div class="container-fluid">
           <div class="row">
@@ -61,21 +61,21 @@
               <div class="card w-100 mb-3">
                 <h3 class="card-header">Level</h3>
                 <div class="card-body">
-                  <form class="form" name="filterCategories">
+                  <form class="form" name="filterLevel">
                     <div class="custom-control custom-checkbox">
-                      <input type="checkbox" class="custom-control-input" id="filterSilver" name="filterSilver" value="silver">
+                      <input type="checkbox" class="custom-control-input" id="filterSilver" name="filterSilver" value="Silver">
                       <label class="custom-control-label" for="filterSilver">Silver</label>
                     </div>
                     <div class="custom-control custom-checkbox">
-                      <input type="checkbox" class="custom-control-input" id="filterGold" name="filterGold" value="gold">
+                      <input type="checkbox" class="custom-control-input" id="filterGold" name="filterGold" value="Gold">
                       <label class="custom-control-label" for="filterGold">Gold</label>
                     </div>
                     <div class="custom-control custom-checkbox">
-                      <input type="checkbox" class="custom-control-input" id="filterPlatinum" name="filterPlatinum" value="platinum">
+                      <input type="checkbox" class="custom-control-input" id="filterPlatinum" name="filterPlatinum" value="Platinum">
                       <label class="custom-control-label" for="filterPlatinum">Platinum</label>
                     </div>
                     <div class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" id="filterDiamond" name="filterDiamond" value="diamond">
+                        <input type="checkbox" class="custom-control-input" id="filterDiamond" name="filterDiamond" value="Diamond">
                         <label class="custom-control-label" for="filterDiamond">Diamond</label>
                       </div>
                   </form>
@@ -89,7 +89,7 @@
                   <form class="form" name="filterRating">
                     <div class="input-group mb-3">
                       <div class="input-group-prepend">
-                        <span class="input-group-text">Minimum Rating $</span>
+                        <span class="input-group-text">Minimum Rating</span>
                       </div>
                       <input type="text" class="form-control" aria-label="Minimum Rating" id="filterMinRatingText" name="filterMinRatingText" value="0">
                       <div class="input-group-append">
@@ -101,7 +101,7 @@
 
                     <div class="input-group mb-3 mt-5">
                       <div class="input-group-prepend">
-                        <span class="input-group-text">Maximum Rating $</span>
+                        <span class="input-group-text">Maximum Rating</span>
                       </div>
                       <input type="text" class="form-control" aria-label="Maximum Rating" id="filterMaxRatingText" name="filterMaxRatingText" value="10">
                       <div class="input-group-append">
@@ -117,7 +117,7 @@
               <div class="card w-100 mb-3">
                 <h3 class="card-header">Playstyle</h3>
                 <div class="card-body">
-                  <form class="form" name="filterStyles">
+                  <form class="form" name="filterPlaystyle">
                     <div class="custom-control custom-checkbox">
                       <input type="checkbox" class="custom-control-input" id="filterStyle1" name="filterStyle1" value="Aggressive">
                       <label class="custom-control-label" for="filterStyle1">Aggressive</label>
@@ -135,30 +135,8 @@
               </div>
             </div>
 
-            <!-- Matched players -->
-            <div id="playerPostings" class="col-sm-12 col-md-8">
-                <div class="card w-100 mb-3">
-                    
-                        <div class="row card-body">
-                            <img class="col-sm-3 userListingImg" src="user1.jpg" alt="sans"/>
-                           <div class="col-sm-9">
-                                <h5 class="card-title">Gintoki</h5>
-                                <h6 class="card-subtitle mb-2 text-muted">
-                                    <button type="button" class="rating btn btn-outline-warning mr-2 my-r">
-                                        <i class="fas fa-star">
-                                           8 
-                                        </i>
-                                    </button>
-                                </h6>
-                                <p class="card-text">
-                                    "Looking for 2 more people to form a group of 6. I live in +9 time zone and am usually online at night."
-                                </p>
-                               <a href="#" class="btn btn-primary">Chat</a>
-                            </div>
-                            
-                        </div>
-    
-                </div>
+            <!-- Matched users -->
+            <div id="userPostings" class="col-sm-12 col-md-8">
                 
             </div>
         </div>
@@ -170,5 +148,7 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="listings.js"></script>
+    <script type="text/javascript" src="UserPost.js"></script>
   </body>
 </html>
