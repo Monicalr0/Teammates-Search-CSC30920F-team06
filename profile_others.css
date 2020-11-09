@@ -1,0 +1,127 @@
+#messageContainer{
+	float: left;
+	width: 300px;
+	margin-left: 25px;
+	margin-right: 20px;
+}
+
+#userProfile{
+	max-width: 650px;
+}
+.userProfilePicture{
+
+	/* Add properties below */
+	width: 200px;
+	margin-top:10px;
+	margin-bottom: 10px;
+	margin-left: 10px;
+	margin-right: 10px;
+	text-align: center;
+	float: left;
+}
+
+.userInfoCard{
+	width: 410px;
+	margin-left: 50px;
+	margin-top: 30PX;
+	margin-bottom: auto;
+}
+
+div.gallery {
+  margin: 5px;
+  border: 1px solid #ccc;
+  float: left;
+  width: 180px;
+}
+
+div.gallery:hover {
+  border: 1px solid #777;
+}
+
+div.gallery img {
+  width: 100%;
+  height: auto;
+}
+
+div.desc {
+  padding: 15px;
+  text-align: center;
+}
+
+
+#commentCard {
+	/* Add properties below */
+	width: 700px;
+}
+
+
+.othersProfilePicture{
+
+	/* Add properties below */
+	width: 150px;
+	margin-top:10px;
+	margin-bottom: 10px;
+	margin-left: 10px;
+	margin-right: 10px;
+	text-align: center;
+	float: left;
+}
+
+.card-horizontal {
+  display: flex;
+  flex: 1 1 auto;
+}
+
+.commentUserInfo{
+  height: 30px;
+}
+
+.commentContent{
+	margin-top: auto;
+	margin-bottom: auto;
+}
+
+.commentDate{
+	margin-right: 0px;
+	float: right;
+}
+
+#reportComment{
+	float:right;
+}
+
+.filterContainer{
+	float: left;
+	width: 300px;
+	margin-left: 25px;
+	margin-right: 20px;
+}
+
+#messageImage
+{
+	width:50px;
+	border-radius: 50%;
+	text-align: right;
+}
+
+#messageBoard
+{
+	border-color: blue;
+}
+
+#message{
+	width: 270px;
+}
+
+
+.alignright {
+    display: inline;
+    float: right;
+}
+
+
+.footer
+{
+	position:absolute;
+	bottom: 0;
+}
