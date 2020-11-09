@@ -1,7 +1,8 @@
 .UserFilterContainer{
-	position: relative;
+	position: absolute;
+	float: left;
 	margin-top: 50px;
-	margin-left:100px;
+	margin-left:150px;
 }
 
 .UserFilterCard{
@@ -14,13 +15,14 @@
 .ReportedPosting{
 	position: relative;
 	float: right;
-	margin-right: 120px;
+
+	margin-right: 100px;
 }
 
 .ReportPosting{
 	position: relative;
 	float: right;
-	margin-right: 120px;
+	margin-right: 100px;
 }
 
 .userImg{
