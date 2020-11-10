@@ -16,9 +16,10 @@ this is the start page of our website, user can login using their user name and 
 <strong> indexLoggedIn.html and index.html:</strong>
 this two page are index page of the website, users will use this page to search the people they wanna play with. the different between these two pages are one is loggined and can go to user profile page by clicking userr button and the unloggedin version can sign up or login. Users can search up keywords to find the users they want to collaborate with. They can also filter the results by level, rating and playstyle. When they click "detail" on a searching result, they will be redirected to that user's profile page.
 <br>             <br>         
-<strong> profile.html:</strong>
+<strong> profile.html / profile_others.html :</strong>
 <br>
-this is the user profile page, user can send massage to this person and also post comment to this person by using the left coner's message box. user can also filter the comment for this person by using the filter on the lower right coner. user itself can send report on certern comment by using the report button. user it self can also edit it own information.
+This is the user profile page under that user's view and the user profile page under other users (here we assume someone hasn't loged in) view. Any users can leave message
+at message board. The user of this profile can edit the profile's About, Language and playstyles preference. User who had played with user can  comment this user by clicking the "comment" button and being redirected to Make Comment page. Any user can report comment can report comment at user's profile page, and a prompt message will be shown as reported success. 
 
 <br>               
 <strong> admin_user.html and admin_comment.html:</strong>
