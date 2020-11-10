@@ -24,8 +24,8 @@ async function initListings(e) {
 	messageForm = document.forms["messageForm"];
 	messageForm.addEventListener("submit", getMessage);
 
-	// updateForm = document.forms["updateForm"];
-	// updateForm.addEventListener("submit", editInfo);	
+	updateForm = document.forms["updateForm"];
+	updateForm.addEventListener("submit", editInfo);
  
 	// commentTypeForm = document.forms["commentTypeForm"];
 	// commentTypeForm.addEventListener("change", filterComment);
