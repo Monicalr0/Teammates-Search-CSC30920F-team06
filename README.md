@@ -23,13 +23,18 @@ this is the user profile page, user can send massage to this person and also pos
 <br>               
 <strong> admin_user.html and admin_comment.html:</strong>
 <br>
-both pages are belongs to admin and only admin can access. after login using admin account user will be directed to admin user page. admin can switch between two pages using right coner button. in the admin_user page admin can see all the user here and admin can also search name or fillter the user by it's activity. in the admin comments page admin can see all the comments and also can either search or filter by properities. in admin user page, admin can use inactive button and incative selection to ban user for a period of time an for comments admin can ban certen commt.
+both pages are belongs to admin and only admin can access. after login using admin account user will be directed to admin user page. admin can switch between two pages using right corner [user]/[comment] button. In the admin_user page admin can see all the user here and admin can filter the user by its status. In the admin comments page admin can see all the comments and can see which one is reported then handle those reports. If the report is true(someone did violate rules), admin can use inactive button and inactive selection to ban user for a period of time(part of the ban action will be done in database).
 
 <br>               
 <strong> commentPage.html and CommentSucceed.html:</strong>
 <br>
-commentPage can be accessed from user's profel, and give this player a comment or report depends which one the user wants. user can also add picture using the upload button and use the submit button to submit. after the comment sucessful submit it will turns to the CommentSucceed.html where it shows comment sucess and return to idnex by return link.
+commentPage can be accessed from user's profile, and give this player a comment or report(need to specify report reasons such as AFK or deffensive words) depends which one the user wants. 
+1. user can also add picture using the upload button
+2. User can give Star rates, max 5 Star.
+3. Entering detail comment in the comment box and use the submit button to submit. 
+after the comment successful submit it will turns to the CommentSucceed.html where it shows comment success and return to index by return link.
 <br>
+
 <br>
 <h2><strong>third-party libraries:</strong></h2>
 
