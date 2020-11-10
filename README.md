@@ -26,6 +26,7 @@ at message board. The user of this profile can edit the profile's About, Languag
 <br>
 both pages are belongs to admin and only admin can access. after login using admin account user will be directed to admin user page. admin can switch between two pages using right corner [user]/[comment] button. In the admin_user page admin can see all the user here and admin can filter the user by its status. In the admin comments page admin can see all the comments and can see which one is reported then handle those reports. If the report is true(someone did violate rules), admin can use inactive button and inactive selection to ban user for a period of time(part of the ban action will be done in database).
 
+
 <br>               
 <strong> commentPage.html and CommentSucceed.html:</strong>
 <br>
