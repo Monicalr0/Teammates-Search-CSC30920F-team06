@@ -18,17 +18,17 @@ const Message = function(content, name) {
 }
 
 async function initListings(e) {
-	searchForm = document.forms["searchForm"];
-	searchForm.addEventListener("submit", searchUsers);
+	// searchForm = document.forms["searchForm"];
+	// searchForm.addEventListener("submit", searchUsers);
 
 	messageForm = document.forms["messageForm"];
-	messageForm.addEventListener("submit", postMessage);
+	messageForm.addEventListener("submit", getMessage);
 
-	updateForm = document.forms["updateForm"];
-	updateForm.addEventListener("submit", editInfo);	
+	// updateForm = document.forms["updateForm"];
+	// updateForm.addEventListener("submit", editInfo);	
  
-	commentTypeForm = document.forms["commentTypeForm"];
-	commentTypeForm.addEventListener("change", filterComment);
+	// commentTypeForm = document.forms["commentTypeForm"];
+	// commentTypeForm.addEventListener("change", filterComment);
 
 
 	// Get all user Info from server
@@ -40,7 +40,7 @@ async function initListings(e) {
 			"Language":"English",
 			"level": "Gold",
 			"playstyle": "Aggressive",
-			"ReportedTims": 1
+			"ReportedTims": 1,
 			"ReportedPercentage": 10
 		}
 	];
@@ -53,6 +53,7 @@ function getMessage(e) {
 
 	// Get message
 	const content = document.querySelector('#newMessage').value
+	console.log("getting content")
 	const user = "user"; //default is the one who login, which is user in this page. 	
 	displayMessage(content, user)
 }
@@ -60,13 +61,19 @@ function getMessage(e) {
 function displayMessage(content, user)
 {
 	const MessageBoard = document.getElementById('message')
+	console.log(MessageBoard.childNodes[1]);
 	const date = new Date();
-	const newMessage = document.createElement("div");
+	const month = date.getUTCMonth() + 1; //months from 1-12
+	const day = date.getDate();
+	const year = date.getFullYear();
+
+	const newdate = year + "/" + month + "/" + day;
+	const newMessage = document.createElement('div');
 	newMessage.innerHTML = `<div class="card-body bg-light">
 						 	<p>${content} </p>
 						 	<strong>${user}</strong>
-						 	<span class="alignright messageDate"> ${date}</span>
+						 	<span class="alignright messageDate"> ${newdate}</span>
 						 	<br>
 				 		</div>`;
-	MessageBoard.appendChild('newMessage');
+	MessageBoard.append(newMessage);
 }

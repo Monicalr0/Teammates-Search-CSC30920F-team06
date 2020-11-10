@@ -165,3 +165,7 @@ div.desc {
 	margin-top: 10px;
 	margin-bottom: 5px;
 }
+
+.updateForm {
+  display: inline-block;
+}
