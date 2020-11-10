@@ -110,3 +110,8 @@ function editInfo(e)
 	//user_info.children[0].children[4].remove()
 	user_info.children[0].replaceChild(span_play,user_info.children[0].children[21])
 }
+
+function report() {
+  alert('report success');
+  
+}

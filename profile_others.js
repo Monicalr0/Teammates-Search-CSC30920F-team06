@@ -100,6 +100,11 @@ function displayMessage(content, user)
 	MessageBoard.append(newMessage);
 }
 
+function report() {
+  alert('report success');
+  
+}
+
 // async function filterComment(e) {
 // 	const checkedRate = commentTypeForm.querySelectorAll("input:checked");
 // 	console.log(checkedRate);

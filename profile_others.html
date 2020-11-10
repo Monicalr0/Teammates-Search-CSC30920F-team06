@@ -125,7 +125,7 @@
 <!-- comment filter -->
 <div class = "container-fluids">
 	<div class="row justify-content-center">
-		<div class="column">
+<!-- 		<div class="column">
 			<div class="filterContainer">
 			 	<div class = "card">
 				 	<strong class="card-header">Comment Type</strong>
@@ -133,23 +133,23 @@
 	                  	<form class="form" name="commentTypeForm">
 		                    <div class="custom-control custom-checkbox">
 		                      <input type="checkbox" class="custom-control-input" id="AllComments" name="AllComments" value="All">
-		                      <label class="custom-control-label" for="AllComments">All</label>
+		                      <label class="custom-control-label" for="All">All</label>
 		                    </div>
 
 		                    <div class="custom-control custom-checkbox">
-		                      <input type="checkbox" class="custom-control-input" id="CommentWithl5" name="CommentWithl5" value="Rate > 5">
-		                      <label class="custom-control-label" for="CommentWithl5">Rate > 5</label>
+		                      <input type="checkbox" class="custom-control-input" id="filterGold" name="filterGold" value="gold">
+		                      <label class="custom-control-label" for="filterGold">Rate > 5</label>
 		                    </div>
 
 		                    <div class="custom-control custom-checkbox">
-		                      <input type="checkbox" class="custom-control-input" id="CommentWiths5" name="CommentWiths5" value="Rate < 5">
-		                      <label class="custom-control-label" for="CommentWiths5">Rate < 5 </label>
+		                      <input type="checkbox" class="custom-control-input" id="filterPlatinum" name="filterPlatinum" value="platinum">
+		                      <label class="custom-control-label" for="filterPlatinum">Rate < 5 </label>
 		                    </div>
 	                  	</form>	
                   	</div>
 				</div>
 			</div>
-		</div>
+		</div> -->
 
 
 	    <!-- Comments -->
@@ -160,60 +160,56 @@
 			    </div>
 		    </div>
 
-		    <div id="CommentPost">
-		        
-		        <div class="card " id="commentCard">
-		            <div class= "card-horizontal">
-		            	<div class="image-square-wrapper">
-			            	<img src="user2.jpg" alt="User Profile Picture", class = "
-				            othersProfilePicture" id = 'commentUser'>
-				        </div>
+	        <div class="card " id="commentCard">
+	            <div class= "card-horizontal">
+	            	<div class="image-square-wrapper">
+		            	<img src="user2.jpg" alt="User Profile Picture", class = "
+			            othersProfilePicture" id = 'commentUser'>
+			        </div>
 
-				        <div class = "card-body">
-				        	<div class = "commentUserInfo">
-				        		<strong>User2</strong> 
-				        		<span class="commentDate">2020/11/01</span>
-				        		<br>
-				        		<strong>Rate:</strong><span> <i class="fas fa-star"></i> 9 </span>
-				        	</div>
-				        	<hr>
-				        	<div>
-				        		<p class = "commentContent"> 
-				            	Awesome Teammate!
-				        		</p>
-				        		<a href="#" class="btn btn-outline-secondary btn-sm" id= reportComment>Report</a>
-				        	</div>
-					    </div>
-		            </div>
-		        </div>
+			        <div class = "card-body">
+			        	<div class = "commentUserInfo">
+			        		<strong>User2</strong> 
+			        		<span class="commentDate">2020/11/01</span>
+			        		<br>
+			        		<strong>Rate:</strong><span> <i class="fas fa-star"></i> 9 </span>
+			        	</div>
+			        	<hr>
+			        	<div>
+			        		<p class = "commentContent"> 
+			            	Awesome Teammate!
+			        		</p>
+			        		<a href="#" class="btn btn-outline-secondary btn-sm" id= reportComment type = "button" onclick="report()">Report</a>
+			        	</div>
+				    </div>
+	            </div>
+	        </div>
 
 
-		        <div class="card " id="commentCard">
-		            <div class= "card-horizontal">
-		            	<div class="image-square-wrapper">
-			            	<img src="user3.jpg" alt="User Profile Picture", class = "
-				            othersProfilePicture">
-				        </div>
+	        <div class="card " id="commentCard">
+	            <div class= "card-horizontal">
+	            	<div class="image-square-wrapper">
+		            	<img src="user3.jpg" alt="User Profile Picture", class = "
+			            othersProfilePicture">
+			        </div>
 
-				        <div class = "card-body">
-				        	<div class = "commentUserInfo">
-				        		<strong>User3</strong> 
-				        		<span class="commentDate">2020/10/24</span>
-				        		<br>
-				        		<strong>Rate:</strong><span> <i class="fas fa-star"></i> 0 </span>
-				        	</div>
-				        	<hr>
-				        	<div>
-				        		<p class = "commentContent"> 
-				            	Would never play with him again.
-				        		</p>
-				        		<a href="#" class="btn btn-outline-secondary btn-sm" id= reportComment>Report</a>
-				        	</div>
-					    </div>
-		            </div>
-		        </div>
-
-		    </div>
+			        <div class = "card-body">
+			        	<div class = "commentUserInfo">
+			        		<strong>User3</strong> 
+			        		<span class="commentDate">2020/10/24</span>
+			        		<br>
+			        		<strong>Rate:</strong><span> <i class="fas fa-star"></i> 0 </span>
+			        	</div>
+			        	<hr>
+			        	<div>
+			        		<p class = "commentContent"> 
+			            	Would never play with him again.
+			        		</p>
+			        		<a href="#" class="btn btn-outline-secondary btn-sm" id= reportComment type = "button" onclick="report()">Report</a>
+			        	</div>
+				    </div>
+	            </div>
+	        </div>
 	    </div>
 	</div>
 </div>
