@@ -35,6 +35,6 @@ commentPage can be accessed from user's profel, and give this player a comment o
 
 <br>
 <br>
-this website mainly use bootstrap to style the button and form location which also use some of Jquery
+this website uses library: bootstrap jQuery popper
 
 
