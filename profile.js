@@ -76,4 +76,37 @@ function displayMessage(content, user)
 						 	<br>
 				 		</div>`;
 	MessageBoard.append(newMessage);
+	MessageBoard.appendChild('newMessage');
+}
+
+function editInfo(e)
+{
+	e.preventDefault()
+	// first get the input
+	const input_about = updateForm.querySelector('#newAbout').value
+	const input_lang = updateForm.querySelector('#newLan').value
+	const input_playstyle = updateForm.querySelector('#newPlayStyle').value
+
+
+
+	const new_about=document.createTextNode(input_about)
+	const span_about=document.createElement("span")
+	span_about.appendChild(new_about)
+	const user_info = document.querySelector("#userInfo")
+	//user_info.children[0].children[4].remove()
+	user_info.children[0].replaceChild(span_about,user_info.children[0].children[5])
+
+	const new_lang=document.createTextNode(input_lang)
+	const span_lang=document.createElement("span")
+	span_lang.appendChild(new_lang)
+	const user_lan = document.querySelector("#userInfo")
+	//user_info.children[0].children[4].remove()
+	user_info.children[0].replaceChild(span_lang,user_info.children[0].children[13])
+
+	const new_play=document.createTextNode(input_playstyle)
+	const span_play=document.createElement("span")
+	span_play.appendChild(new_play)
+	const user_play = document.querySelector("#userInfo")
+	//user_info.children[0].children[4].remove()
+	user_info.children[0].replaceChild(span_play,user_info.children[0].children[21])
 }
