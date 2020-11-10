@@ -27,7 +27,7 @@
                 <a href="admin_comment.html" class="m-1 btn btn-outline-primary" >Comments</a>
             </li>
             <li class="nav-item">
-              <a href="signup.html" class="m-1 btn btn-outline-primary" >Sign up</a>
+              <a href="register.html" class="m-1 btn btn-outline-primary" >Sign up</a>
             </li>
           </ul>
         </div>
@@ -35,6 +35,7 @@
     </header>
 
 <!-- Search Bar -->
+<main role="main">
       <div class="jumbotron jumbotron-fluid">
         <div class="container">
           <h1 class="display-4 mb-3"><p class="blue">Admin (User Control)</p></h1>
@@ -50,16 +51,17 @@
       </div>
 
 <!-- User Filter Card -->
+<section id="userResults">
 <div class="container UserFilterContainer">
-  <!-- style="position: relative; margin-top: 50px;margin-left:100px"> -->
+  
   <div class="card UserFilterCard">
-   <!-- style="position: absolute; width: 11rem; height: 12rem;float: left"> -->
+   
     <h5 class="card-header">User Filtering</h5>
                 <div class="card-body">
                   <form class="form" name="filterCategories">
                     <div class="custom-control custom-checkbox">
-                      <input type="checkbox" class="custom-control-input" id="All" name="All" value="All">
-                      <label class="custom-control-label" for="All">All</label>
+                      <input type="checkbox" class="custom-control-input" id="Normal" name="Normal" value="Normal">
+                      <label class="custom-control-label" for="Normal">Normal</label>
                     </div>
                     <div class="custom-control custom-checkbox">
                       <input type="checkbox" class="custom-control-input" id="Reported" name="Reported" value="Reported">
@@ -78,33 +80,40 @@
   </div>
 </div>
 
+<!-- Matched users -->
+            <div id="User" class="col-md-8 ReportedPosting">
+                
+            </div>
+            </section>
+    </main>
 
 <!-- <div class="container" style="position: relative; float: right; margin-top: 50px">
           <h6><p style="position: absolute; float: right">Admin</p></h6>
 </div> -->
             <!-- User been reported -->
-            <div id="User" class="col-md-8 ReportedPosting">
-             <!-- style="position: relative; float: right;margin-right: 120px"> -->
+
+
+           <!--  <div id="User" class="col-md-8 ReportedPosting">
+             
                 <div class="card w-100 mb-3">
                     
                   <div class="row card-body">
-                    <!-- <a href="profile.html" class="userImg"> -->
+                    
                       <img class="col-sm-3 userImg" src="ReportedUser.jpg" alt="Img Losing"/>
-                    <!-- </a> -->
-                      <!-- style="width: 230px;height: 220px;position: relative;float: left"  -->
+                    
                          <div class="col-sm-9">
                           
                           <ul class="list-group list-group-flush">
                             <li class="list-group-item">
                             <strong><h5>Username:</strong>&nbsp;&nbsp;
                               <a href="profile.html" class="profileImg">
-                                <!-- style="color: black"> -->
+                                
                               It's me. I was reported.
                               </a></h5></li>
                             <li class="list-group-item">
                             <form><strong><h5>Status:</strong></h5>&nbsp;&nbsp;
                               <label class="checkbox-inline">
-                                <input type="checkbox" value="">&nbsp;All
+                                <input type="checkbox" value="">&nbsp;Normal
                               </label>&nbsp;&nbsp;
                               <label class="checkbox-inline">
                                 <input type="checkbox" value="" checked>&nbsp;Reported
@@ -116,25 +125,17 @@
                                 <input type="checkbox" value="">&nbsp;Marked
                               </label>
                             </form><br>
-                          <!-- </li> -->
-                            <!-- <li class="list-group-item"> -->
+                          
                               
                             </li>
 
                             <li class="list-group-item">
                                 <strong><h5>Time Reported: </strong>3 times</h5><br>
                               </li>
-                              <!-- <li class="list-group-item">
-                                <strong><h5>Reason: </strong>AFK</h5><br>
-                              </li> -->
+                              
                               <li class="list-group-item">
                                 <strong><h5>Comments: </strong>1 comments.</h5>
-                                <!-- <div class="card commentCard">
                                 
-                                  <div class="card-body">
-                                    Comment Show Here.
-                                  </div>
-                                </div> -->
                               </li>
                             <li class="list-group-item">
                               <strong><h5>Inactive:</strong></h5>
@@ -145,7 +146,7 @@
                               <option>forever</option>
                               </select><br>
                               <button class="btn btn-outline-secondary btn-sm InactiveButton">
-                               <!-- style="margin-left:200px;margin-right: 100px"> -->
+                               
                              Inactive</button>
 
                             </li>
@@ -155,15 +156,15 @@
                         </div>    
                </div>              
             </div>
-            <!-- User who report this one -->
+            
             <div id="User" class="col-md-8 ReportPosting">
-             <!-- style="position: relative; float: right;margin-right: 120px"> -->
+             
                 <div class="card w-100 mb-3">
                     
                         <div class="row card-body">
                           <img class="col-sm-3 userImg" src="ReportUser.jpg" alt="Img Losing"/>
                            <div class="col-sm-9">
-                            <!-- style="position: relative;float: right"> -->
+                            
                             <ul class="list-group list-group-flush">
                               <li class="list-group-item">
                                 <strong><h5>Username:</strong>
@@ -176,7 +177,7 @@
                               <li class="list-group-item">
                             <form><strong><h5>Status:</strong></h5>&nbsp;&nbsp;
                               <label class="checkbox-inline">
-                                <input type="checkbox" value="">&nbsp;All
+                                <input type="checkbox" value="" checked>&nbsp;Normal
                               </label>&nbsp;&nbsp;
                               <label class="checkbox-inline">
                                 <input type="checkbox" value="">&nbsp;Reported
@@ -188,24 +189,16 @@
                                 <input type="checkbox" value="">&nbsp;Marked
                               </label>
                             </form><br>
-                          <!-- </li> -->
-                            <!-- <li class="list-group-item"> -->
+                          
                               
                             </li>
                             <li class="list-group-item">
                                 <strong><h5>Time Reported: </strong>0 times</h5><br>
                               </li>
-                              <!-- <li class="list-group-item">
-                                <strong><h5>Reason: </strong>AFK</h5><br>
-                              </li> -->
+                              
                               <li class="list-group-item">
                                 <strong><h5>Comments: </strong>5 comments.</h5>
-                                <!-- <div class="card commentCard">
                                 
-                                  <div class="card-body">
-                                    Comment Show Here.
-                                  </div>
-                                </div> -->
                               </li>
                             <li class="list-group-item">
                               <strong><h5>Inactive:</strong></h5>
@@ -216,18 +209,19 @@
                               <option>forever</option>
                               </select><br>
                               <button class="btn btn-outline-secondary btn-sm InactiveButton">
-                               <!-- style="margin-left:200px;margin-right: 100px"> -->
+                               
                              Inactive</button>
 
                             </li>
                                                           
                         </div>    
                </div>              
-            </div>
+            </div> -->
 
   
-
-
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="admin_user.js"></script>
+    <script type="text/javascript" src="admin_user2.js"></script>
     </body>
 
  </html>
