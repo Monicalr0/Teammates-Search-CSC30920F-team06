@@ -43,7 +43,7 @@
           <h1 class="display-4 mb-3"><p class="blue">User Profile </p></h1>
           <form class="form-inline" name="searchForm">
             <div class="input-group input-group-lg w-100 mb-3">
-              <input type="text" name="game" class="form-control" placeholder="User Name" aria-label="Game Title">
+              <input type="text" name="user" class="form-control" placeholder="User Name" aria-label="User Name">
               <div class="input-group-append">
                 <button class="btn btn-outline-secondary" type="submit" id="teammateSearchButton"><i class="fas fa-search"></i> Search</button>
               </div>
@@ -51,24 +51,7 @@
           </form>
         </div>
       </div>
-<!-- 
-	<div class="card">
-	  <img class="card-img-top" src="user1.jpg" alt="Card image cap">
-	  <div class="card-body">
-	    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-  	  </div>
-	</div>
- -->
 
- 	<!-- Message Board -->
-<!--  	<div class="card">
- 		<div class="messageContainer">
-		  	<p>Hello. How are you today?</p>
-		  	<span class="time-right">11:00</span>
- 		</div>
-	  	
-	</div>
- -->
  <div class="container-fluids mb-4">
  	<div class="row justify-content-center">
 		 	<div class="card" id = "messageContainer">
@@ -81,24 +64,18 @@
 			 	<div class = "card-body" id="messageBoard">
 			 		<div class = "container" id = "message">
 						<div class="card-body bg-light">
-							<img src="user2.jpg" alt="User2" class="alignleft" id="messageImage">
 						 	<p>Hello, I'm interesting to form team with you, please dm me if you are interested. </p>
+						 	<strong>user2</strong>
 						 	<span class="alignright messageDate"> 2020/10/31 </span>
 						 	<br>
 				 		</div>
 				 	</div>	
 				 	<div class="submitMessage">
-					 	<input id='newMessage' type="text" placeholder="Message">
-					 	<input type="submit" value="send" class="btn-primary">
+				 		<form id = "messageForm">
+						 	<input id='newMessage' type="text" placeholder="Message">
+						 	<input type="submit" value="send" class="btn-primary">
+					 	</form>
 				 	</div>
-<!-- 				 	<div class="talk_input">
-						            <select class="whotalk" id="swho">
-						                <option value="0">A说：</option>
-						                <option value="1">B说：</option>
-						            </select>
-					            <input type="text" class="talk_word" id="talkwords">
-					            <input type="btn" value="send" class="talk_sub" id="talksub">
-					</div>	 -->
 				</div>
 			</div>
 
@@ -111,10 +88,13 @@
             <a href="https://twitter.com/home" class= "fa fa-twitter inline"></a> <strong> user</strong>
             </li>
 
-            <input class="editInput" id='newAbout' type="text" placeholder="new About">
-            <input class="editInput" id='newLan' type="text" placeholder="new Language">
-            <input class="editInput" id='newPlayStyle' type="text" placeholder="new Playstyle">
-            <input type="submit" value="Edit" class="btn-primary w-50 mx-auto">
+            <form id = "updateForm" class="updateForm mx-auto">
+	            <input class="editInput" id='newAbout' type="text" placeholder="new About">
+	            <br>
+	            <input class="editInput" id='newLan' type="text" placeholder="new Language"><br>
+	            <input class="editInput" id='newPlayStyle' type="text" placeholder="new Playstyle">
+	            <input type="submit" value="Edit" class="btn-primary w-50">
+            </form>
         </div>
 
         <div class="card">
@@ -124,7 +104,7 @@
 	            	<br><br>
 	            	<strong>About: </strong> <span> Hello, I'm user.</span>
 	            	<br><br>
-	            	<strong>Rate: </strong> <span> &#9733 &#9733 &#9733 &#9733 &#9734</span>
+	            	<strong>Rate: </strong> <i class="fas fa-star"></i> 8
 	            	<br><br>
 	            	<strong>Language: </strong> <span> English </span>
 	            	<br><br>
@@ -156,10 +136,10 @@
 			 	<div class = "card">
 				 	<strong class="card-header">Comment Type</strong>
                 	<div class="card-body">
-	                  	<form class="form">
+	                  	<form class="form" name="commentTypeForm">
 		                    <div class="custom-control custom-checkbox">
-		                      <input type="checkbox" class="custom-control-input" id="filterSilver" name="filterSilver" value="silver">
-		                      <label class="custom-control-label" for="filterSilver">All</label>
+		                      <input type="checkbox" class="custom-control-input" id="AllComments" name="AllComments" value="All">
+		                      <label class="custom-control-label" for="All">All</label>
 		                    </div>
 
 		                    <div class="custom-control custom-checkbox">
@@ -198,7 +178,7 @@
 			        		<strong>User2</strong> 
 			        		<span class="commentDate">2020/11/01</span>
 			        		<br>
-			        		<strong>Rate:</strong><span> &#9733 &#9733 &#9733 &#9733 &#9733 </span>
+			        		<strong>Rate:</strong><span> <i class="fas fa-star"></i> 9 </span>
 			        	</div>
 			        	<hr>
 			        	<div>
@@ -224,7 +204,7 @@
 			        		<strong>User3</strong> 
 			        		<span class="commentDate">2020/10/24</span>
 			        		<br>
-			        		<strong>Rate:</strong><span> &#9734 &#9734 &#9734 &#9734 &#9734 </span>
+			        		<strong>Rate:</strong><span> <i class="fas fa-star"></i> 0 </span>
 			        	</div>
 			        	<hr>
 			        	<div>
