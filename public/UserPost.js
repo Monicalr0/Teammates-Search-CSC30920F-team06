@@ -9,7 +9,7 @@ async function renderUserPost(userPost, userPostsDiv) {
 	postDiv.className = "card w-100 mb-3";
 	postDiv.innerHTML = `
 	<div class="row card-body">
-		<img class="col-sm-3 userListingImg" src="${userPost.name}.jpg" alt="sans"/>
+		<img class="col-sm-3 userListingImg" src="img/${userPost.name}.jpg" alt="sans"/>
 		<div class="col-sm-9">
 			 <h5 class="card-title">${userPost.name}</h5>
 		 	<h6 class="card-subtitle mb-2 text-muted">
@@ -50,16 +50,62 @@ function clearUserPosts(userPostsDiv) {
 async function createUserPost(userPost) {
 	// Should send the new post entry to the server
 	// so the server can store the entry in the db
-	
+	const url = '/post';
+	const request = new Request(url, {
+	        method: 'post',
+	        body: JSON.stringify(userPost),
+	        headers: {
+	            'Accept': 'application/json, text/plain, */*',
+	            'Content-Type': 'application/json'
+	        },
+	    });
+	const res = await fetch(request);
+	const json = await res.json();
+	if(json.error) {
+		return json;
+	}
+	else if(json.redirect) {
+		window.location.href = json.redirect;
+	}
+	else {
+		return json;
+	}
 }
 
 async function deleteUserPost(userPostID) {
 	// Should delete the given user post from db
-	
+	const url = `/post/${userPostID}`;
+	const request = new Request(url, {
+	        method: 'DELETE',
+	        body: JSON.stringify({}),
+	        headers: {
+	            'Accept': 'application/json, text/plain, */*',
+	            'Content-Type': 'application/json'
+	        },
+	    });
+
+	const res = await fetch(request);
+	return res.status === 200;
 }
 
 async function getAllUserPosts() {
 	// Get all user posts from server
-	
+	const url = `/posts`;
+    const request = new Request(url, {
+        method: 'get',
+        headers: {
+            'Accept': 'application/json, text/plain, */*',
+            'Content-Type': 'application/json'
+        },
+    });
+    const res = await fetch(request)
+    const json = await res.json();
+    if(json.error) {
+		alert(json.error);
+	} else if(json.redirect) {
+		window.location.href = json.redirect;
+	}
+
+    return json;
 }
 

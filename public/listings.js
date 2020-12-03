@@ -17,24 +17,24 @@ async function initListings(e) {
 	userPostsDiv = document.querySelector("#userPostings");
 
 	// Get all user posts from server
-	// userPosts = await getAllUserPosts();
-	userPosts = [
-		{
-			"name":"user",
-			"desc":"Hi!",
-			"level": "Gold",
-			"playstyle": "Aggressive",
-			"rating":8
-		},
-		{
-			"name":"user2",
-			"desc":"Hello!",
-			"level": "Silver",
-			"playstyle": "Defensive",
-			"rating":5.4
-		}
+	userPosts = await getAllUserPosts();
+	// userPosts = [
+	// 	{
+	// 		"name":"user",
+	// 		"desc":"Hi!",
+	// 		"level": "Gold",
+	// 		"playstyle": "Aggressive",
+	// 		"rating":8
+	// 	},
+	// 	{
+	// 		"name":"user2",
+	// 		"desc":"Hello!",
+	// 		"level": "Silver",
+	// 		"playstyle": "Defensive",
+	// 		"rating":5.4
+	// 	}
 
-	];
+	// ];
 	for(var user of userPosts) await renderUserPost(user, userPostsDiv);
 
 	// Event Listeners for syncing rating slider and textboxes
@@ -65,32 +65,32 @@ async function searchUsers(e) {
 	const reKeywords = new RegExp(searchForm.elements["keywords"].value.split(" ").join("|"), "i");
 	console.log(reKeywords);
 	// Get all user posts from server
-	// userPosts = await getAllUserPosts()
-	// userPosts = userPosts.filter(user =>
-	// 	(user.name.match(reKeywords) || user.desc.match(reKeywords) && user.level.match(reLevel) && user.playstyle.match(rePlaystyle)));
-
-	// clearUserPosts(userPostsDiv);
-	userPosts = [
-		{
-			"name":"user",
-			"desc":"Hi!",
-			"level": "Gold",
-			"playstyle": "Aggressive",
-			"rating":8
-		},
-		{
-			"name":"user2",
-			"desc":"Hello!",
-			"level": "Silver",
-			"playstyle": "Defensive",
-			"rating":5
-		}
-
-	];
+	userPosts = await getAllUserPosts()
 	userPosts = userPosts.filter(user =>
-		(user.name.match(reKeywords) || user.desc.match(reKeywords)));
+		(user.name.match(reKeywords) || user.desc.match(reKeywords) && user.level.match(reLevel) && user.playstyle.match(rePlaystyle)));
 
 	clearUserPosts(userPostsDiv);
+	// userPosts = [
+	// 	{
+	// 		"name":"user",
+	// 		"desc":"Hi!",
+	// 		"level": "Gold",
+	// 		"playstyle": "Aggressive",
+	// 		"rating":8
+	// 	},
+	// 	{
+	// 		"name":"user2",
+	// 		"desc":"Hello!",
+	// 		"level": "Silver",
+	// 		"playstyle": "Defensive",
+	// 		"rating":5
+	// 	}
+
+	// ];
+	// userPosts = userPosts.filter(user =>
+	// 	(user.name.match(reKeywords) || user.desc.match(reKeywords)));
+
+	// clearUserPosts(userPostsDiv);
 	
 
 	for(var user of userPosts) await renderUserPost(user, userPostsDiv);

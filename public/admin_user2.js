@@ -9,7 +9,7 @@ async function renderUserPost(user, userPostsDiv) {
 	postDiv.innerHTML = `
 	<div class="row card-body">
                     
-                      <img class="col-sm-3 userImg" src=${user.UserImg} alt="Img Losing"/>
+                      <img class="col-sm-3 userImg" src="img/${user.UserImg}" alt="Img Losing"/>
                     
                          <div class="col-sm-9">
                           
