@@ -42,6 +42,18 @@ app.get('/', (req, res) => {
 	res.sendFile(path.join(__dirname, '/public/index.html'))
 })
 
+//Temp Function. For testing only, can be changed later.
+app.get('user', (req, res) => {
+	res.sendFile(path.join(__dirname, '/public/profile.html'))
+})
+app.get('profile.js', (req, res) => {
+	res.sendFile(path.join(__dirname, '/public/profile.js'))
+})
+app.get('UserProfile.js', (req, res) => {
+	res.sendFile(path.join(__dirname, '/public/UserProfile.js'))
+})
+
+
 app.listen(port, () => {
 	log(`Listening on port ${port}...`)
 });

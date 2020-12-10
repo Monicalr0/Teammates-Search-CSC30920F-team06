@@ -2,6 +2,7 @@
 
 const mongoose = require('mongoose')
 const bcrypt = require('bcrypt')
+const fs = require('fs');
 
 const userSchema = new mongoose.Schema({
     username:{
@@ -45,8 +46,8 @@ const userSchema = new mongoose.Schema({
         default: 0
     },
     PlayedGame:{
-        type:String,
-        default: ""
+        type:Array,
+        default: []
     }
 })
 
@@ -85,5 +86,32 @@ userSchema.statics.findByNamePassword = function(username, password) {
     })
 }
 
+const getAllUsers = () => {
+    try{
+        const allUser = fs.readFileSync('userDB.json');
+        return JSON.parse(allUser);
+    }
+    catch(e){
+        return [];
+    }
+
+};
+
+const getUserByName = (name) => {
+    /* Add your code below */
+    const allUsers = getAllUsers();
+    const target = allUsers.filter(user => user.name === name);
+
+    if(target.length === 0)
+    {
+        return {};
+    }
+    else
+    {
+        return target[0];
+    }
+
+};
+
 const User = mongoose.model('User', userSchema)
-module.exports = { User }
+module.export = { User }

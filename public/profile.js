@@ -24,8 +24,8 @@ async function initListings(e) {
 	messageForm = document.forms["messageForm"];
 	messageForm.addEventListener("submit", getMessage);
 
-	updateForm = document.forms["updateForm"];
-	updateForm.addEventListener("submit", editInfo);
+	// updateForm = document.forms["updateForm"];
+	// updateForm.addEventListener("submit", editInfo);
  
 	// commentTypeForm = document.forms["commentTypeForm"];
 	// commentTypeForm.addEventListener("change", filterComment);
@@ -44,6 +44,13 @@ async function initListings(e) {
 			"ReportedPercentage": 10
 		}
 	];
+
+	//Find the user name based on current URL.
+	const pathArray = window.location.pathname.split('/');
+	const username = "user"
+	// let username = pathArray[pathArray.length-1];
+	let userProfileDiv = document.querySelector("#userProfile");
+	renderUserProfile(username, userProfileDiv)
 }
 
 window.addEventListener("load", initListings);
