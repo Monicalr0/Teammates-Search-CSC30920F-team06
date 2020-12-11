@@ -7,22 +7,24 @@ const { Admin} = require('../models/admin')
 
 function seed(){
     /** Clear Models */
-	
+	User.remove({}, function(err) {
+        console.log('Users cleared')
+    }) 
     UserPost.remove({}, function(err) {
         console.log('Posts cleared')
     }) 
 
     /** USERS **/
 	const users = [
-        {"username": "user", "password": "user", "About": "Hello, I'm user.", "Rate": 8,
+        {"username": "user", "password": "user", "About": "Hello, I'm user.", "Rate": 9.4,
         "Language": "English", "Level": "Gold", "PlayStyle": "Aggressive", "PlayTime": 10, "ReportedTime": 1,
         "PlayedGame": ["PUBG"]
         },
-        {"username": "user2", "password": "user2", "About": "Hello, I'm user2.", "Rate": 5,
+        {"username": "user2", "password": "user2", "About": "Hello, I'm user2.", "Rate": 9.8,
         "Language": "English", "Level": "Silver", "PlayStyle": "Aggressive", "PlayTime": 3, "ReportedTime":0,
         "PlayedGame": ["PUBG"]
         },
-        {"username": "user3", "password": "user3", "About": "Hello, I'm user3.", "Rate": 9,
+        {"username": "user3", "password": "user3", "About": "Hello, I'm user3.", "Rate": 2,
         "Language": "English", "Level": "Platinum", "PlayStyle": "Defensive", "PlayTime": 20, "ReportedTime":1,
         "PlayedGame": ["PUBG"]
         }
