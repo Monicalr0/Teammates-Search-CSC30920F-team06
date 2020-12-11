@@ -73,7 +73,7 @@ function register_process(e){
         }
 
         $('#success_alert').show()
-        setTimeout(function(){window.location.href = "login.html"} ,2500)
+        setTimeout(function(){window.location.href = "index"} ,2500)
 
 
     }

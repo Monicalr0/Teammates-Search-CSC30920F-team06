@@ -48,12 +48,25 @@ app.get('/user', (req, res) => {
 	res.sendFile(path.join(__dirname, '/public/profile.html'))
 })
 
+//routes and functions
 app.get('/posts', (req, res) => {
 	UserPost.find({}).then((docs) => {
 		res.send(docs);
 	}).catch((error) => {
 		res.status(400).send(sanitizeMongoError(error));
 	})
+})
+
+app.get('/index', (req, res) => {
+	res.sendFile(path.join(__dirname, '/public/indexLoggedIn.html'))
+})
+
+app.get('/login', (req, res) => {
+	res.sendFile(path.join(__dirname, '/public/login.html'))
+})
+
+app.get('/signup', (req, res) => {
+	res.sendFile(path.join(__dirname, '/public/signup.html'))
 })
 
 // Debug Routes

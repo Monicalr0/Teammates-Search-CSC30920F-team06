@@ -59,6 +59,7 @@ async function initListings(e) {
 
 window.addEventListener("load", initListings);
 
+
 async function searchUsers(e) {
 	e.preventDefault();
 
@@ -67,7 +68,7 @@ async function searchUsers(e) {
 	// Get all user posts from server
 	userPosts = await getAllUserPosts()
 	userPosts = userPosts.filter(user =>
-		(user.name.match(reKeywords) || user.desc.match(reKeywords) && user.level.match(reLevel) && user.playstyle.match(rePlaystyle)));
+		(user.name.match(reKeywords) || user.desc.match(reKeywords) || user.PlayedGame.match(reKeywords) && user.level.match(reLevel) && user.playstyle.match(rePlaystyle)));
 
 	clearUserPosts(userPostsDiv);
 	// userPosts = [
