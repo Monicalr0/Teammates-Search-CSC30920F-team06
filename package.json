@@ -1,0 +1,27 @@
+{
+  "name": "express",
+  "version": "1.0.0",
+  "description": "<strong>login credentials:<br>\r </strong> we have 2 users here are the name/password user/user user2/user2 and 1 admin with its name/password is admin/admin\r please note since we hard code all the data in the JS so register success won't up date the account to the database \r which you can only use user and user2 to login.\r <br>\r <br>\r <h2><strong>page info:</strong></h2>\r       <br>                 \r <strong> signin.html and register.html:</strong>\r <br>\r this is the start page of our website, user can login using their user name and password, if either is wrong the alert message will display. if login success it will jump to either admin page or indexLoggedIn.html(aka the lounge) depends on what is you account access level. if user do not have account they can click the \"register here\" link to jump to the register page.<br> register page will creat a new account by using the input value. if the user name is exist or any input box is not empty or didn't check the box, an alert will pop up and remind user wich part is wrong. is register is success, a green alert will show up and after few seconds to will direct back to the login page.",
+  "main": "server.js",
+  "dependencies": {
+    "bcrypt": "^5.0.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.11.2",
+    "validator": "^13.5.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/csc309-fall-2020/team06.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/csc309-fall-2020/team06/issues"
+  },
+  "homepage": "https://github.com/csc309-fall-2020/team06#readme"
+}
