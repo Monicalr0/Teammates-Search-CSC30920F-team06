@@ -28,7 +28,7 @@ function Login_process(e){
         {
             $('#invalid_alert').hide()
             //avaliable user turn to profile page
-            window.location.href = "indexLoggedIn.html";
+            window.location.href = "index";
         }
         else
         {
