@@ -30,13 +30,11 @@ const postSchema = new mongoose.Schema({
 	desc: {
 		type: String,
 		required: true
+	},
+	PlayedGame: {
+		type: Array,
+		default: []
 	}
-	// ,
-	// creator: {
-	// 	type: mongoose.Schema.Types.ObjectId,
-	// 	ref: 'User',
-	// 	required: true
-	// }
 });
 
 const UserPost = mongoose.model('UserPost', postSchema)

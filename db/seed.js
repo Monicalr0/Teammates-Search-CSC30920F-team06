@@ -3,7 +3,7 @@
 // Import the models
 const { User } = require('../models/user')
 const { UserPost } = require('../models/userpost')
-const { Admin} = require('../models/admin')
+const { Admin} = require('../models/admin');
 
 function seed(){
     /** Clear Models */
@@ -13,35 +13,40 @@ function seed(){
     });
 
     /** USERS **/
-	// const _user = {
-
-    // }
-    // const _user1 = {
-
-    // }
-
-    // const user = new User(_user);
-    // user.save();
-    // const user1 = new User(_user1);
-    // user1.save();
-
-    /** USERPOSTS */
-    const userposts = [
-        {
-            name: "user",
-            rating: 6.6,
-            level: "Gold",
-            playStyle: "Aggressive",
-            desc: "Hi. My name is user. I am looking for teammate to play 'among us' with."
+	const users = [
+        {"username": "user", "password": "user", "About": "Hello, I'm user.", "Rate": 8,
+        "Language": "English", "Level": "Gold", "PlayStyle": "Aggressive", "PlayTime": 10, "ReportedTime": 1,
+        "PlayedGame": ["PUBG"]
         },
-        {
-            name: "user1",
-            rating: 4.3,
-            level: "Silver",
-            playStyle: "Defensive",
-            desc: "Hi. My name is user1. I am looking for teammate to play 'raging loop' with."
+        {"username": "user2", "password": "user2", "About": "Hello, I'm user2.", "Rate": 5,
+        "Language": "English", "Level": "Silver", "PlayStyle": "Aggressive", "PlayTime": 3, "ReportedTime":0,
+        "PlayedGame": ["PUBG"]
+        },
+        {"username": "user3", "password": "user3", "About": "Hello, I'm user3.", "Rate": 9,
+        "Language": "English", "Level": "Platinum", "PlayStyle": "Defensive", "PlayTime": 20, "ReportedTime":1,
+        "PlayedGame": ["PUBG"]
         }
     ]
+    for (user of users) {
+        let newUser = new User(user);
+        newUser.save().catch((error) => console.log(error));
+    }
+
+    /** USERPOSTS */
+
+    const userposts = []
+    for (user of users) {
+        const tmp = {
+            name : user.username,
+            rating : user.Rate,
+            level : user.Level,
+            playStyle : user.PlayStyle,
+            desc : user.About,
+            PlayedGame : user.PlayedGame
+        }
+
+        userposts.push(tmp)
+    }
 
     // use the Job Post model to insert/save
     for (post of userposts) {
