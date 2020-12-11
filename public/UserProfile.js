@@ -1,11 +1,19 @@
 "use strict"
-// const User = require('models/user')
+
 // import User from 'models/user';
+// const { User } = require('./models/user')
 
 async function renderUserProfile(username, userProfileDiv) {
 
-    // const user = User.getUserByName(username);
-    // console.log(user);
+    // const user = getUserByName(username);
+    const user = {username: "user", password: "user", About: "Hello, I'm user.", Rate: 8,
+        Language: "English", Level: "Gold", PlayStyle: "Aggressive", PlayTime: 10, ReportedTime: 1,
+        PlayedGame: ["PUBG"], MessageReceived: [{"content":"Hello, I'm interesting to form team with you, please dm me if you are interested.",
+            username:"user2", time:"2020/10/31"}], "CommentReceived": [{content: "Awesome Teammate!", username:"User2",
+            time: "2020/11/01", rate:9}, {content: "Would never play with him again.", username:"User3",
+            time: "2020/10/24", rate:1}]
+    }
+    console.log(user);
 
     let profileDiv = document.createElement('div');
     profileDiv.className="d-flex justify-content-center"
@@ -13,46 +21,42 @@ async function renderUserProfile(username, userProfileDiv) {
     <div class="card bg-light ">
             <img src="img/user.jpg" alt="User Profile Picture", class = "userProfilePicture">
             <li class = "socialList">
-            <!-- this will be link to user account page  -->
-            <a href="https://www.facebook.com/" class= "fa fa-facebook inline"></a><strong> user</strong>
-            <a href="https://twitter.com/home" class= "fa fa-twitter inline"></a> <strong> user</strong>
+                <!-- this will be link to user account page  -->
+                <a href="https://www.facebook.com/" class= "fa fa-facebook inline"></a><strong> ${user.username} </strong>
+                <a href="https://twitter.com/home" class= "fa fa-twitter inline"></a> <strong> ${user.username} </strong>
             </li>
-
-            <form id = "updateForm" class="updateForm mx-auto">
-            <input class="editInput" id='newAbout' type="text" placeholder="new About">
-           <br>
-           <input class="editInput" id='newLan' type="text" placeholder="new Language"><br>
-           <input class="editInput" id='newPlayStyle' type="text" placeholder="new Playstyle">
-            <input type="submit" value="Edit" class="btn-primary w-50">
-            </form>
-        </div>
+            
+            <div class="text-align:center">
+                <form id = "updateForm">
+                    <input class="editInput" id='newAbout' type="text" placeholder="new About">
+                    <br>
+                    <input class="editInput" id='newLan' type="text" placeholder="new Language"><br>
+                    <input class="editInput" id='newPlayStyle' type="text" placeholder="new Playstyle">
+                    <input type="submit" value="Edit" class="btn-primary w-50">
+                </form>
+            </div>
+    </div>
 
         <div class="card">
   <div class="userInfoCard" id="userInfo">
            <p> 
-            <strong>Username: </strong> <span> User</span>
+            <strong>Username: </strong> <span>${user.username}</span>
            <br><br>
-           <strong>About: </strong> <span> Hello, I'm user.</span>
+           <strong>About: </strong> <span>${user.About}</span>
            <br><br>
-            <strong>Rate: </strong> <i class="fas fa-star"></i> 8
+            <strong>Rate: </strong> <i class="fas fa-star"></i> ${user.Rate}
            <br><br>
-           <strong>Language: </strong> <span> English </span>
+           <strong>Language: </strong> <span>${user.Language}</span>
             <br><br>
-            <strong>Level:</strong> <span>Gold</span>
+            <strong>Level:</strong> <span>${user.Level}</span>
             <br><br>
-            <strong>PlayStyle:</strong> <span>Agressive</span>
+            <strong>PlayStyle:</strong> <span>${user.PlayStyle}</span>
             <br><br>
-            <strong>Reported Times: </strong> <span> 1  </span>
-            <strong>Reported percetage: </strong> <span> 10%</span>
+            <strong>Played Times: </strong> <span> ${user.PlayTime} </span>
+            <strong>Reported Times: </strong> <span> ${user.ReportedTime} </span>
             <br><br>
             <strong>Played Game: </strong> 
             </p>
-            <div class="gallery">
-            <a>
-               <img src="img/PUBG.jpg" alt="Game Image">
-            </a>
-            <div class="desc">PUBG</div>
-            </div>
         </div>
     </div>
    </div>
@@ -63,3 +67,91 @@ async function renderUserProfile(username, userProfileDiv) {
 
 }
 
+async function renderGallery(username, userGameDiv)
+{
+    const user = {username: "user", password: "user", About: "Hello, I'm user.", Rate: 8,
+        Language: "English", Level: "Gold", PlayStyle: "Aggressive", PlayTime: 10, ReportedTime: 1,
+        PlayedGame: ["PUBG"], MessageReceived: [{"content":"Hello, I'm interesting to form team with you, please dm me if you are interested.",
+            username:"user2", time:"2020/10/31"}], "CommentReceived": [{content: "Awesome Teammate!", username:"User2",
+            time: "2020/11/01", rate:9}, {content: "Would never play with him again.", username:"User3",
+            time: "2020/10/24", rate:1}]
+    }
+
+    let gallery = document.createElement('div')
+    gallery.className = "gallery"
+    for (let game of user.PlayedGame){
+        let gameDiv = document.createElement('div')
+        gameDiv.innerHTML = `
+        <a>
+           <img src="img/${game}.jpg" alt="Game Image">
+        </a>
+        <div class="desc">${game}</div>`
+
+        gallery.appendChild(gameDiv);
+    }
+
+    userGameDiv.appendChild(gallery)
+}
+
+async function renderUserMessageBoard(username, userMessageDiv){
+    const user = {username: "user", password: "user", About: "Hello, I'm user.", Rate: 8,
+        Language: "English", Level: "Gold", PlayStyle: "Aggressive", PlayTime: 10, ReportedTime: 1,
+        PlayedGame: ["PUBG"], MessageReceived: [{"content":"Hello, I'm interesting to form team with you, please dm me if you are interested.",
+            username:"user2", time:"2020/10/31"}], "CommentReceived": [{content: "Awesome Teammate!", username:"User2",
+            time: "2020/11/01", rate:9}, {content: "Would never play with him again.", username:"User3",
+            time: "2020/10/24", rate:1}]
+    }
+
+    // const user = getUserByName(username);
+    // console.log(user);
+    for (let message of user.MessageReceived){
+        let messageDiv = document.createElement('div');
+        messageDiv.innerHTML = `
+            <div class = "container" id = "message">
+                <div class="card-body bg-light">
+                    <p>${message.content} </p>
+                    <strong>${message.username}</strong>
+                    <span class="alignright messageDate"> ${message.time} </span>
+                    <br>
+                </div>
+            </div>`
+        userMessageDiv.appendChild(messageDiv)
+    }
+}
+
+async function renderUserCommentBoard(username, userCommentDiv){
+    // const user = getUserByName(username);
+    const user = {username: "user", password: "user", About: "Hello, I'm user.", Rate: 8,
+        Language: "English", Level: "Gold", PlayStyle: "Aggressive", PlayTime: 10, ReportedTime: 1,
+        PlayedGame: ["PUBG"], MessageReceived: [{"content":"Hello, I'm interesting to form team with you, please dm me if you are interested.",
+            username:"user2", time:"2020/10/31"}], "CommentReceived": [{content: "Awesome Teammate!", username:"User2",
+            time: "2020/11/01", rate:9}, {content: "Would never play with him again.", username:"User3",
+            time: "2020/10/24", rate:1}]
+    }
+    for (let comment of user.CommentReceived){
+        let commentDiv = document.createElement('div');
+        commentDiv.innerHTML = `
+            <div class="card commentCard">
+                <div class= "card-horizontal">
+                    <div class="image-square-wrapper">
+                        <img src="img/${comment.username}.jpg" alt="User Profile Picture" class = "othersProfilePicture" id = 'commentUser'>
+                    </div>
+                    <div class = "card-body">
+                        <div class = "commentUserInfo">
+                            <strong>${comment.username}</strong> 
+                            <span class="commentDate">${comment.time}</span>
+                            <br>
+                            <strong>Rate:</strong><span> <i class="fas fa-star"></i>${comment.rate}</span>
+                        </div>
+                        <hr>
+                        <div>
+                        <p class = "commentContent">${comment.content}</p>
+                        <a href="#" class="btn btn-outline-secondary btn-sm reportComment" type = "button" onclick="report(${comment.username})">Report</a>
+                        </div>
+                    </div>
+                </div>
+            </div>`
+        userCommentDiv.appendChild(commentDiv)
+    }
+
+}

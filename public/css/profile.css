@@ -49,9 +49,9 @@ div.desc {
 }
 
 
-#commentCard {
+.commentCard {
 	/* Add properties below */
-	width: 700px;
+	width: 650px;
 }
 
 
@@ -86,7 +86,7 @@ div.desc {
 	float: right;
 }
 
-#reportComment{
+.reportComment{
 	float:right;
 }
 
@@ -166,6 +166,11 @@ div.desc {
 	margin-bottom: 5px;
 }
 
-.updateForm {
+#updateForm {
   display: inline-block;
+  text-align: center;
+}
+
+#Comments{
+	margin-left: 480px;
 }

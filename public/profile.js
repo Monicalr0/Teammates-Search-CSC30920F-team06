@@ -7,50 +7,43 @@
 //   placement: 'left-start',
 // });
 
-let userInfo = [];
-let searchForm, messageForm, updateForm, commentTypeForm;
+let searchForm, messageForm, updateForm;
 
-const Message = function(content, name) {
-	this.content = content;
-	this.name = name;
-	this.Date = new Date();
-
+//Find the user name based on current URL.
+const pathArray = window.location.pathname.split('/');
+const username = "user"
+// let username = pathArray[pathArray.length-1];
+// const user = getUserByName(username);
+const user = {username: "user", password: "user", About: "Hello, I'm user.", Rate: 8,
+	Language: "English", Level: "Gold", PlayStyle: "Aggressive", PlayTime: 10, ReportedTime: 1,
+	PlayedGame: ["PUBG"], MessageReceived: [{"content":"Hello, I'm interesting to form team with you, please dm me if you are interested.",
+		username:"user2", time:"2020/10/31"}], "CommentReceived": [{content: "Awesome Teammate!", username:"User2",
+		time: "2020/11/01", rate:9}, {content: "Would never play with him again.", username:"User3",
+		time: "2020/10/24", rate:1}]
 }
 
 async function initListings(e) {
-	// searchForm = document.forms["searchForm"];
-	// searchForm.addEventListener("submit", searchUsers);
+	searchForm = document.forms["searchForm"];
+	searchForm.addEventListener("submit", searchUsers);
+
+	let userMessageDiv = document.querySelector("#messageBoard");
+	await renderUserMessageBoard(username,userMessageDiv)
+
+	let userProfileDiv = document.querySelector("#userProfile");
+	await renderUserProfile(username, userProfileDiv)
+
+	let userGameDiv = document.querySelector("#userInfo");
+	await renderGallery(username, userGameDiv)
+
+	let userCommentDiv = document.querySelector("#Comments");
+	await renderUserCommentBoard(username, userCommentDiv)
 
 	messageForm = document.forms["messageForm"];
 	messageForm.addEventListener("submit", getMessage);
 
-	// updateForm = document.forms["updateForm"];
-	// updateForm.addEventListener("submit", editInfo);
- 
-	// commentTypeForm = document.forms["commentTypeForm"];
-	// commentTypeForm.addEventListener("change", filterComment);
+	updateForm = document.forms["updateForm"];
+	updateForm.addEventListener("submit", editInfo);
 
-
-	// Get all user Info from server
-	userInfo = [
-		{
-			"name":"user",
-			"About":"Hi!",
-			"Rate": 8,
-			"Language":"English",
-			"level": "Gold",
-			"playstyle": "Aggressive",
-			"ReportedTims": 1,
-			"ReportedPercentage": 10
-		}
-	];
-
-	//Find the user name based on current URL.
-	const pathArray = window.location.pathname.split('/');
-	const username = "user"
-	// let username = pathArray[pathArray.length-1];
-	let userProfileDiv = document.querySelector("#userProfile");
-	renderUserProfile(username, userProfileDiv)
 }
 
 window.addEventListener("load", initListings);
@@ -60,15 +53,26 @@ function getMessage(e) {
 
 	// Get message
 	const content = document.querySelector('#newMessage').value
-	console.log("getting content")
-	const user = "user"; //default is the one who login, which is user in this page. 	
-	displayMessage(content, user)
+	const sender = "user"; //default is the one who login, which is user in this page.
+	const date = new Date()
+	const month = date.getUTCMonth() + 1; //months from 1-12
+	const day = date.getDate();
+	const year = date.getFullYear();
+
+	const today = year + "/" + month + "/" + day;
+	user.MessageReceived.push({
+		content:content,
+		username:sender,
+		time: today
+	})
+	console.log(user) //change to save to json
+	displayMessage(content, sender)
 }
 
 function displayMessage(content, user)
 {
 	const MessageBoard = document.getElementById('message')
-	console.log(MessageBoard.childNodes[1]);
+	// console.log(MessageBoard.childNodes[1]);
 	const date = new Date();
 	const month = date.getUTCMonth() + 1; //months from 1-12
 	const day = date.getDate();
@@ -83,7 +87,6 @@ function displayMessage(content, user)
 						 	<br>
 				 		</div>`;
 	MessageBoard.append(newMessage);
-	MessageBoard.appendChild('newMessage');
 }
 
 function editInfo(e)
@@ -100,25 +103,44 @@ function editInfo(e)
 	const span_about=document.createElement("span")
 	span_about.appendChild(new_about)
 	const user_info = document.querySelector("#userInfo")
-	//user_info.children[0].children[4].remove()
 	user_info.children[0].replaceChild(span_about,user_info.children[0].children[5])
+	user.About = new_about
 
 	const new_lang=document.createTextNode(input_lang)
 	const span_lang=document.createElement("span")
 	span_lang.appendChild(new_lang)
 	const user_lan = document.querySelector("#userInfo")
-	//user_info.children[0].children[4].remove()
 	user_info.children[0].replaceChild(span_lang,user_info.children[0].children[13])
+	user.Language = new_lang
 
 	const new_play=document.createTextNode(input_playstyle)
 	const span_play=document.createElement("span")
 	span_play.appendChild(new_play)
 	const user_play = document.querySelector("#userInfo")
-	//user_info.children[0].children[4].remove()
 	user_info.children[0].replaceChild(span_play,user_info.children[0].children[21])
+	user.PlayStyle = new_play
+
+	console.log(user)
 }
 
-function report() {
+function report(username) {
   alert('report success');
+  let reported = getUserByName(username);
+
   
+}
+
+async function searchUsers(e) {
+	e.preventDefault()
+	try{
+	// const input_user= searchForm.querySelector('#newUser').value
+	// window.location = "./profile/input_users"
+	// window.open("./profile/input_users")
+	}
+	catch (err)
+	{
+		console.log(err)
+	}
+
+
 }

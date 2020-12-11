@@ -68,6 +68,10 @@ const userSchema = new mongoose.Schema({
     CommentReceived:{
         type:[commentSchema],
         default:[]
+    },
+    Status:{
+        type:String,
+        default: "Normal"
     }
 })
 
