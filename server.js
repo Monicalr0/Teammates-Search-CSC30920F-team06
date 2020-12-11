@@ -11,6 +11,7 @@ const app = express();
 // mongoose and mongo connection
 const { mongoose } = require('./db/mongoose')
 mongoose.set('bufferCommands', false);  // don't buffer db requests if the db server isn't connected - minimizes http requests hanging if this is the case.
+const { seed } = require('./db/seed');
 
 // import the mongoose models
 const { User } = require('./models/user')
@@ -55,6 +56,15 @@ app.get('/posts', (req, res) => {
 	})
 })
 
+// Debug Routes
+app.get('/seed/', (req, res) => {
+	if(seed() == true){
+		if(req.session) req.session.destroy();
+		res.send("Database Seeded")
+	} else{
+		res.status(500).send("Seeding Failed");
+	}
+})
 
 app.listen(port, () => {
 	log(`Listening on port ${port}...`)
