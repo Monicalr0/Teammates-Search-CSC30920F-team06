@@ -23,7 +23,7 @@ const postSchema = new mongoose.Schema({
 		required: true,
 		trim: true
 	},
-	playStyle: {
+	playstyle: {
 		type: String,
 		required: true
 	},

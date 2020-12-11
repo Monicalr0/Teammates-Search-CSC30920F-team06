@@ -3,14 +3,14 @@
 // Import the models
 const { User } = require('../models/user')
 const { UserPost } = require('../models/userpost')
-const { Admin} = require('../models/admin');
+const { Admin} = require('../models/admin') 
 
 function seed(){
     /** Clear Models */
 	
     UserPost.remove({}, function(err) {
         console.log('Posts cleared')
-    });
+    }) 
 
     /** USERS **/
 	const users = [
@@ -28,8 +28,8 @@ function seed(){
         }
     ]
     for (user of users) {
-        let newUser = new User(user);
-        newUser.save().catch((error) => console.log(error));
+        let newUser = new User(user) 
+        newUser.save().catch((error) => console.log(error)) 
     }
 
     /** USERPOSTS */
@@ -40,7 +40,7 @@ function seed(){
             name : user.username,
             rating : user.Rate,
             level : user.Level,
-            playStyle : user.PlayStyle,
+            playstyle : user.PlayStyle,
             desc : user.About,
             PlayedGame : user.PlayedGame
         }
@@ -50,12 +50,12 @@ function seed(){
 
     // use the Job Post model to insert/save
     for (post of userposts) {
-        let newPost = new UserPost(post);
-        newPost.save().catch((error) => console.log(error));
+        let newPost = new UserPost(post) 
+        newPost.save().catch((error) => console.log(error)) 
     }
 
     // seeded!
-    console.log('Database seeded!');
+    console.log('Database seeded!') 
 
     return true
 }

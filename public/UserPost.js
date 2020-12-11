@@ -23,7 +23,7 @@ async function renderUserPost(userPost, userPostsDiv) {
 					 	${userPost.level}
 					 </i>
 				 </button>
-				 <button type="button" class="rating btn btn-outline-info mr-2 my-r">
+				 <button type="button" class="playstyle btn btn-outline-info mr-2 my-r">
 				 	<i class="fas fa-gamepad-alt">
 					 	${userPost.playstyle}
 					 </i>
