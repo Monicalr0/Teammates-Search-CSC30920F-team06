@@ -34,7 +34,7 @@ function isMongoError(error) { // checks for first error returned by promise rej
 /// access to the entire directory.
 
 // static js directory
-app.use("/js", express.static(path.join(__dirname, '/public')))
+app.use("/", express.static(path.join(__dirname + '/public')))
 app.use("/css", express.static(__dirname + '/public/css'))
 app.use("/img", express.static(__dirname + '/public/img'))
 
@@ -43,14 +43,16 @@ app.get('/', (req, res) => {
 })
 
 //Temp Function. For testing only, can be changed later.
-app.get('user', (req, res) => {
+app.get('/user', (req, res) => {
 	res.sendFile(path.join(__dirname, '/public/profile.html'))
 })
-app.get('profile.js', (req, res) => {
-	res.sendFile(path.join(__dirname, '/public/profile.js'))
-})
-app.get('UserProfile.js', (req, res) => {
-	res.sendFile(path.join(__dirname, '/public/UserProfile.js'))
+
+app.get('/posts', (req, res) => {
+	UserPost.find({}).then((docs) => {
+		res.send(docs);
+	}).catch((error) => {
+		res.status(400).send(sanitizeMongoError(error));
+	})
 })
 
 
