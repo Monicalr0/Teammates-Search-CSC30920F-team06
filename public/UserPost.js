@@ -5,7 +5,7 @@ async function renderUserPost(userPost, userPostsDiv) {
 	const postDiv = document.createElement("div");
 	let link = userPost.name;
 	if(link)
-		link = 'http://profile/' + link;
+		link = window.location.href + link;
 	postDiv.className = "card w-100 mb-3";
 	postDiv.innerHTML = `
 	<div class="row card-body">
