@@ -67,8 +67,20 @@ async function searchUsers(e) {
 	console.log(reKeywords);
 	// Get all user posts from server
 	userPosts = await getAllUserPosts()
+
+
+	if ( !typeof(reLevel) === 'undefined' && !typeof(rePlaystyle) === 'undefined')
+		userPosts = userPosts.filter(user =>
+			((user.name.match(reKeywords) || user.desc.match(reKeywords) || user.PlayedGame.includes(searchForm.elements["keywords"].value)) && user.level.match(reLevel) && user.playstyle.match(rePlaystyle)));
+	else if (!typeof(reLevel) === 'undefined')
 	userPosts = userPosts.filter(user =>
-		(user.name.match(reKeywords) || user.desc.match(reKeywords) || user.PlayedGame.match(reKeywords) && user.level.match(reLevel) && user.playstyle.match(rePlaystyle)));
+		((user.name.match(reKeywords) || user.desc.match(reKeywords) || user.PlayedGame.includes(searchForm.elements["keywords"].value)) && user.level.match(reLevel)));
+	else if (!typeof(rePlaystyle) === 'undefined')
+	userPosts = userPosts.filter(user =>
+		((user.name.match(reKeywords) || user.desc.match(reKeywords) || user.PlayedGame.includes(searchForm.elements["keywords"].value)) && user.playstyle.match(rePlaystyle)));
+	else
+	userPosts = userPosts.filter(user =>
+		((user.name.match(reKeywords) || user.desc.match(reKeywords) || user.PlayedGame.includes(searchForm.elements["keywords"].value)) ));
 
 	clearUserPosts(userPostsDiv);
 	// userPosts = [
