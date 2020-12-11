@@ -22,13 +22,14 @@ const { UserPost } = require('./models/userpost')
 const { ObjectID } = require('mongodb')
 
 // body-parser: middleware for parsing HTTP JSON body into a usable object
-const bodyParser = require('body-parser') 
+const bodyParser = require('body-parser')
 app.use(bodyParser.json())
 
 /*** Helper functions below **********************************/
 function isMongoError(error) { // checks for first error returned by promise rejection if Mongo database suddently disconnects
 	return typeof error === 'object' && error !== null && error.name === "MongoNetworkError"
 }
+
 
 /*** Webpage routes below **********************************/
 /// We only allow specific parts of our public directory to be access, rather than giving
@@ -63,6 +64,74 @@ app.get('/seed/', (req, res) => {
 		res.send("Database Seeded")
 	} else{
 		res.status(500).send("Seeding Failed");
+	}
+})
+/*** database router for adding user and admin **********************************/
+// a POST route to *create* a student
+app.post('/api/creatuser', async (req, res) => {
+	log(req.body)
+
+	// Create a user
+	const user = new User({
+		username: req.body.username,
+		password: req.body.password,
+		//creator: req.user._id // creator id from the authenticate middleware
+	})
+
+
+	// Save user to the database
+	// async-await version:
+	try {
+		const result = await user.save()
+		res.send(result)
+	} catch(error) {
+		 // log server error to the console, not to the client.
+		if (isMongoError(error)) { // check for if mongo server suddenly dissconnected before this request.
+
+			{
+				res.status(500).send('Internal server error')
+			}
+
+
+
+		} else {
+			log(error.code)
+			if (error.code==11000)
+			{
+				res.status(404).send('Dup Key')
+			}
+			else
+			{
+				res.status(400).send('Bad Request') // 400 for bad request gets sent to client.
+			}
+
+		}
+	}
+})
+
+app.post('/api/creatadmin', async (req, res) => {
+	// log(req.body)
+
+	// Create a admin
+	const admin = new Admin({
+		username: req.body.username,
+		password: req.body.password,
+		//creator: req.user._id // creator id from the authenticate middleware
+	})
+
+
+	// Save admin to the database
+	// async-await version:
+	try {
+		const result = await admin.save()
+		res.send(result)
+	} catch(error) {
+		log(error) // log server error to the console, not to the client.
+		if (isMongoError(error)) { // check for if mongo server suddenly dissconnected before this request.
+			res.status(500).send('Internal server error')
+		} else {
+			res.status(400).send('Bad Request') // 400 for bad request gets sent to client.
+		}
 	}
 })
 
