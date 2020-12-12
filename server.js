@@ -79,6 +79,55 @@ app.get('/seed/', (req, res) => {
 		res.status(500).send("Seeding Failed");
 	}
 })
+
+/*** session handle **********************************/
+// express-session for managing user sessions
+const session = require('express-session')
+
+/// Middleware for creating sessions and session cookies.
+// A session is created on every request, but whether or not it is saved depends on the option flags provided.
+app.use(session({
+	secret: 'our hardcoded secret', // later we will define the session secret as an environment variable for production. for now, we'll just hardcode it.
+	cookie: { // the session cookie sent, containing the session id.
+		expires: 120000, // 2 minute expiry
+		httpOnly: true // important: saves it in only browser's memory - not accessible by javascript (so it can't be stolen/changed by scripts!).
+	},
+
+	// Session saving options
+	saveUninitialized: false, // don't save the initial session if the session object is unmodified (for example, we didn't log in).
+	resave: false, // don't resave an session that hasn't been modified.
+}));
+
+// A route to login and create a session
+app.post('/users/login', async (req, res) => {
+	const username = req.body.username
+	const password = req.body.password
+
+	try {
+		// Use the static method on the User model to find a user
+		// by their email and password.
+		const user = await User.findByNamePassword(username, password);
+		if (!user) {
+			res.redirect('/public/login.html');
+		} else {
+			// Add the user's id and email to the session.
+			// We can check later if the session exists to ensure we are logged in.
+			req.session.user = user._id;
+			req.session.password = user.password
+			res.redirect('indexLoggedIn.html');
+		}
+	} catch (error) {
+		// redirect to login if can't login for any reason
+		if (isMongoError(error)) {
+			res.status(500).redirect('/public/login.html');
+		} else {
+			log(error)
+			res.status(400).redirect('/public/login.html');
+		}
+	}
+
+})
+
 /*** database router for adding user and admin **********************************/
 // a POST route to *create* a student
 app.post('/api/creatuser', async (req, res) => {
