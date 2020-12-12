@@ -37,6 +37,17 @@ commentPage can be accessed from user's profile, and give this player a comment 
 after the comment successful submit it will turns to the CommentSucceed.html where it shows comment success and return to index by return link.
 <br>
 
+<h2><strong>Phase2</strong></h2>
+
+
+<br>
+all routes are in the servers.js and they can be put into three type of routes, 
+first are the static and navigation route which response for control what can user see and how to link each page toughter, they do not expect any input.
+second are session control route which in the address of /users/login which allow use send json file and check with the database inorder to creat login function. this route will retuen a status code and reject or not. /api/creatadmin can creat admin and /api/creatuser will create user both them recive jsonfile 
+third routes are database related, thouse routes recive json file and put them into database, it also involve hash password into a random string that keep user's data safe
+<br>
+
+
 <br>
 <h2><strong>third-party libraries:</strong></h2>
 
