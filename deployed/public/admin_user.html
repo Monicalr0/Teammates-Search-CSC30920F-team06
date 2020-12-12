@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Admin_User</title>
+
+    <!-- Bootstrap CSS -->
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/admin_user.css">
+
+</head>
+
+ <body>
+     <header>
+      <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#AccountMenu" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="AccountMenu">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a href="admin_comment.html" class="m-1 btn btn-outline-primary" >Comments</a>
+            </li>
+            <li class="nav-item">
+              <a href="register.html" class="m-1 btn btn-outline-primary" >Sign up</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+<!-- Search Bar -->
+<main role="main">
+      <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <h1 class="display-4 mb-3"><p class="blue">Admin (User Control)</p></h1>
+          <form class="form-inline" name="searchForm">
+            <div class="input-group input-group-lg w-100 mb-3">
+              <input type="text" name="User" class="form-control" placeholder="User name">
+              <div class="input-group-append">
+                <button class="btn btn-outline-secondary" type="submit" id="teammateSearchButton"><i class="fas fa-search"></i> Search</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+<!-- User Filter Card -->
+<section id="userResults">
+<div class="container UserFilterContainer">
+  
+  <div class="card UserFilterCard">
+   
+    <h5 class="card-header">User Filtering</h5>
+                <div class="card-body">
+                  <form class="form" name="filterCategories">
+                    <div class="custom-control custom-checkbox">
+                      <input type="checkbox" class="custom-control-input" id="Normal" name="Normal" value="Normal">
+                      <label class="custom-control-label" for="Normal">Normal</label>
+                    </div>
+                    <div class="custom-control custom-checkbox">
+                      <input type="checkbox" class="custom-control-input" id="Reported" name="Reported" value="Reported">
+                      <label class="custom-control-label" for="Reported">Reported</label>
+                    </div>
+                    <div class="custom-control custom-checkbox">
+                      <input type="checkbox" class="custom-control-input" id="Problem" name="Problem" value="Problem">
+                      <label class="custom-control-label" for="Problem">Problem</label>
+                    </div>
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="Marked" name="Marked" value="Marked">
+                        <label class="custom-control-label" for="Marked">Marked</label>
+                      </div>
+                  </form>
+                </div>
+  </div>
+</div>
+
+<!-- Matched users -->
+            <div id="User" class="col-md-8 ReportedPosting">
+                
+            </div>
+            </section>
+    </main>
+
+<!-- <div class="container" style="position: relative; float: right; margin-top: 50px">
+          <h6><p style="position: absolute; float: right">Admin</p></h6>
+</div> -->
+            <!-- User been reported -->
+
+
+           <!--  <div id="User" class="col-md-8 ReportedPosting">
+             
+                <div class="card w-100 mb-3">
+                    
+                  <div class="row card-body">
+                    
+                      <img class="col-sm-3 userImg" src="ReportedUser.jpg" alt="Img Losing"/>
+                    
+                         <div class="col-sm-9">
+                          
+                          <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                            <strong><h5>Username:</strong>&nbsp;&nbsp;
+                              <a href="profile.html" class="profileImg">
+                                
+                              It's me. I was reported.
+                              </a></h5></li>
+                            <li class="list-group-item">
+                            <form><strong><h5>Status:</strong></h5>&nbsp;&nbsp;
+                              <label class="checkbox-inline">
+                                <input type="checkbox" value="">&nbsp;Normal
+                              </label>&nbsp;&nbsp;
+                              <label class="checkbox-inline">
+                                <input type="checkbox" value="" checked>&nbsp;Reported
+                              </label>&nbsp;&nbsp;
+                              <label class="checkbox-inline">
+                                <input type="checkbox" value="">&nbsp;Problem
+                              </label>&nbsp;&nbsp;
+                              <label class="checkbox-inline">
+                                <input type="checkbox" value="">&nbsp;Marked
+                              </label>
+                            </form><br>
+                          
+                              
+                            </li>
+
+                            <li class="list-group-item">
+                                <strong><h5>Time Reported: </strong>3 times</h5><br>
+                              </li>
+                              
+                              <li class="list-group-item">
+                                <strong><h5>Comments: </strong>1 comments.</h5>
+                                
+                              </li>
+                            <li class="list-group-item">
+                              <strong><h5>Inactive:</strong></h5>
+                              <select class="form-control" id="sel1">
+                              <option>3 days</option>
+                              <option>1 month</option>
+                              <option>3 month</option>
+                              <option>forever</option>
+                              </select><br>
+                              <button class="btn btn-outline-secondary btn-sm InactiveButton">
+                               
+                             Inactive</button>
+
+                            </li>
+                            </ul>
+                              
+                            </div>                            
+                        </div>    
+               </div>              
+            </div>
+            
+            <div id="User" class="col-md-8 ReportPosting">
+             
+                <div class="card w-100 mb-3">
+                    
+                        <div class="row card-body">
+                          <img class="col-sm-3 userImg" src="ReportUser.jpg" alt="Img Losing"/>
+                           <div class="col-sm-9">
+                            
+                            <ul class="list-group list-group-flush">
+                              <li class="list-group-item">
+                                <strong><h5>Username:</strong>
+                                &nbsp;&nbsp;
+                                <a href="profile.html" class="profileImg">
+                                Hello, I am just normal user.
+                                </a></h5>
+                              </li>
+                              
+                              <li class="list-group-item">
+                            <form><strong><h5>Status:</strong></h5>&nbsp;&nbsp;
+                              <label class="checkbox-inline">
+                                <input type="checkbox" value="" checked>&nbsp;Normal
+                              </label>&nbsp;&nbsp;
+                              <label class="checkbox-inline">
+                                <input type="checkbox" value="">&nbsp;Reported
+                              </label>&nbsp;&nbsp;
+                              <label class="checkbox-inline">
+                                <input type="checkbox" value="">&nbsp;Problem
+                              </label>&nbsp;&nbsp;
+                              <label class="checkbox-inline">
+                                <input type="checkbox" value="">&nbsp;Marked
+                              </label>
+                            </form><br>
+                          
+                              
+                            </li>
+                            <li class="list-group-item">
+                                <strong><h5>Time Reported: </strong>0 times</h5><br>
+                              </li>
+                              
+                              <li class="list-group-item">
+                                <strong><h5>Comments: </strong>5 comments.</h5>
+                                
+                              </li>
+                            <li class="list-group-item">
+                              <strong><h5>Inactive:</strong></h5>
+                              <select class="form-control" id="sel1">
+                              <option>3 days</option>
+                              <option>1 month</option>
+                              <option>3 month</option>
+                              <option>forever</option>
+                              </select><br>
+                              <button class="btn btn-outline-secondary btn-sm InactiveButton">
+                               
+                             Inactive</button>
+
+                            </li>
+                                                          
+                        </div>    
+               </div>              
+            </div> -->
+
+  
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="admin_user.js"></script>
+    <script type="text/javascript" src="admin_user2.js"></script>
+    </body>
+
+ </html>
+

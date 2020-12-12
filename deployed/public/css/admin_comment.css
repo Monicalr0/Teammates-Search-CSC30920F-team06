@@ -1,0 +1,61 @@
+.CommentFilterContainer{
+
+	margin-top: 50px;
+/*	margin-left:100px;*/
+}
+
+.CommentFilterCard{
+	/*position: absolute;*/
+	/*position: relative;*/
+	width: 40rem;
+	height: 8rem;
+	/*float: left;*/
+}
+.card {
+        margin: 0 auto; /* Added */
+         /* Added */
+        margin-bottom: 10px; /* Added */
+}
+
+.CommentCardContainer{
+		/*position: relative;*/
+		display: flex;
+		margin-top: 50px;
+		
+}
+
+
+.CommentCard{
+	width: 40rem;
+	height: 30rem;
+	
+}
+.specialcolor{
+	color: black;
+}
+
+.stars{
+	margin-right: 80px;
+    margin-left: 100px;
+    position: relative;
+    display: inline-block;
+}
+.star {
+    visibility:hidden;
+    cursor:pointer;
+    font-size: 20px;
+    /*margin-right: 100px;
+    margin-left: 100px;
+    position: relative;
+    float: right;
+    display: inline-block;*/
+}
+.star:before {
+   content: "\2605";
+   visibility:visible;
+   /*display: inline-block;*/
+}
+.star:checked:before {
+   content: "\2606";
+   /*display: inline-block;*/
+}

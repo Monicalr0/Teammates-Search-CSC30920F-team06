@@ -1,0 +1,31 @@
+html,
+body {
+     height: 100%;
+     background-image: url('login_background.jpg');
+     background-repeat: no-repeat;
+     background-attachment: fixed;
+     background-size: cover;
+ }
+
+.white {
+    color: white;
+}
+.black{
+    color: black;
+}
+
+/*#nav-toggle-button{
+    background-color:red;
+}
+
+.nav-item{
+    outline: none;
+    box-shadow: none;
+}*/
+
+.Nothing{
+    position: relative;
+    color: white;
+    text-align: center;
+    margin-top: 200px;
+}
