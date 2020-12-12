@@ -5,7 +5,17 @@ https://salty-scrubland-97536.herokuapp.com/
 <h2><strong>How to use:</strong></h2>
 The user could use this webapp to search for teammates when they want to play a Multiplayer Online Battle Arena Video Games such as LOL.
 After signed up an account and logged in, user could use index page to search for teammates. User could use sidebar to get a more specific search result, such as choose different level, rating and playstyle as they want.<br>
-And in profile page, user could view other users' profile.We set up a schema for users which contains some basic userinfo such as language prefer, level and greeting message. And communicate with others by sending message. Or, if they have some unpleasant experience, they could report this user.
+And in profile page, user could view other users' profile.We set up a schema for users which contains some basic userinfo such as language prefer, level and greeting message. And communicate with others by sending message. Or, if they have some unpleasant experience, they could report this user.<br>
+<h2><strong>Phase2</strong></h2>
+
+
+ <br>
+ all routes are in the servers.js and they can be put into three type of routes, 
+ first are the static and navigation route which response for control what can user see and how to link each page toughter, they do not expect any input.
+ second are session control route which in the address of /users/login which allow use send json file and check with the database inorder to creat login function. this route will retuen a status code and reject or not. /api/creatadmin can creat admin and /api/creatuser will create user both them recive jsonfile 
+ third routes are database related, thouse routes recive json file and put them into database, it also involve hash password into a random string that keep user's data safe
+ <br>
+
 <h2><strong>page info:</strong></h2>
       <br>                 
 <strong> signin.html and register.html:</strong>
