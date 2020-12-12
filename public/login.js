@@ -31,8 +31,8 @@ function Login_process(e){
         method: 'post',
         body: JSON.stringify(data),
         headers: {
-            'Accept': 'application/json, text/plain, */*',
-            'Content-Type': 'application/json'
+             'Accept': 'application/json, text/plain, */*',
+             'Content-Type': 'application/json'
         },
     });
 
@@ -43,12 +43,13 @@ function Login_process(e){
             // Handle response we get from the API.
             // Usually check the error codes to see what happened.
             //const message = document.querySelector('#message')
+            console.log(res.status)
             if (res.status === 200) {
                 // If student was added successfully, tell the user.
-                //console.log('Added user')
+
                 $('#success_alert').show()
-                window.location.href = "index";
-                //setTimeout(function(){window.location.href = "login.html"} ,2500)
+                //window.location.href = "index";
+                setTimeout(function(){window.location.href = "indexLoggedIn.html"} ,2500)
                 //message.innerText = 'Success: Added a student.'
                 //message.setAttribute("style", "color: green")
 
@@ -75,9 +76,10 @@ function Login_process(e){
             //  users are not expected to see this.
         }).catch((error) => {
 
-        console.log(error)
+        //console.log(error)
     })
 
+}
 
 //
 //     //check if the input is in userDb
@@ -117,4 +119,4 @@ function Login_process(e){
 //         $('#invalid_alert').hide()
 //         setTimeout(function(){$('#invalid_alert').show()} ,150)
 //     }
-}
+

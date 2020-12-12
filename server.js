@@ -103,18 +103,21 @@ app.post('/users/login', async (req, res) => {
 	const username = req.body.username
 	const password = req.body.password
 
+
 	try {
 		// Use the static method on the User model to find a user
 		// by their email and password.
+
 		const user = await User.findByNamePassword(username, password);
+
 		if (!user) {
 			res.redirect('/public/login.html');
 		} else {
 			// Add the user's id and email to the session.
 			// We can check later if the session exists to ensure we are logged in.
 			req.session.user = user._id;
-			req.session.password = user.password
-			res.redirect('indexLoggedIn.html');
+			req.session.password = user.password;
+			res.status(200).send('target found')
 		}
 	} catch (error) {
 		// redirect to login if can't login for any reason
@@ -131,7 +134,7 @@ app.post('/users/login', async (req, res) => {
 /*** database router for adding user and admin **********************************/
 // a POST route to *create* a student
 app.post('/api/creatuser', async (req, res) => {
-	log(req.body)
+
 
 	// Create a user
 	const user = new User({

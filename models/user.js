@@ -91,7 +91,7 @@ userSchema.pre('save', function(next) {
 })
 
 userSchema.statics.findByNamePassword = function(username, password) {
-
+    const User = this
     // First find the user by their username
     return User.findOne({ username: username }).then((user) => {
         if (!user) {
