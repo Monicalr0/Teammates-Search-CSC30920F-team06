@@ -6,7 +6,7 @@ https://salty-scrubland-97536.herokuapp.com/
 The user could use this webapp to search for teammates when they want to play a Multiplayer Online Battle Arena Video Games such as LOL.
 After signed up an account and logged in, user could use index page to search for teammates. User could use sidebar to get a more specific search result, such as choose different level, rating and playstyle as they want.<br>
 And in profile page, user could view other users' profile.We set up a schema for users which contains some basic userinfo such as language prefer, level and greeting message. And communicate with others by sending message. Or, if they have some unpleasant experience, they could report this user.<br>
-<h2><strong>Phase2</strong></h2>
+<h2><strong>Routes</strong></h2>
 
 
  <br>
