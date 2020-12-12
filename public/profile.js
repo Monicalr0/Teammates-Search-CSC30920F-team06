@@ -1,12 +1,3 @@
-// import { createPopper } from '@popperjs/core';
-
-// const popcorn = document.querySelector('#commentUser');
-// const tooltip = document.querySelector('#tooltip');
-
-// createPopper(popcorn, tooltip, {
-//   placement: 'left-start',
-// });
-
 let searchForm, messageForm, updateForm;
 
 //Find the user name based on current URL.
@@ -37,6 +28,10 @@ async function initListings(e) {
 
 	let userCommentDiv = document.querySelector("#Comments");
 	await renderUserCommentBoard(username, userCommentDiv)
+
+	let NavBar = document.querySelector("#AccountMenu")
+	const cur = "user";
+	await renderNavBar(cur, NavBar)
 
 	messageForm = document.forms["messageForm"];
 	messageForm.addEventListener("submit", getMessage);
@@ -126,7 +121,8 @@ function editInfo(e)
 function report(username) {
   alert('report success');
   let reported = getUserByName(username);
-
+  reported.status = "Reported"
+	// save to json
   
 }
 

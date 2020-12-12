@@ -1,19 +1,17 @@
 "use strict"
 
-// import User from 'models/user';
-// const { User } = require('./models/user')
 
 async function renderUserProfile(username, userProfileDiv) {
 
-    // const user = getUserByName(username);
-    const user = {username: "user", password: "user", About: "Hello, I'm user.", Rate: 8,
-        Language: "English", Level: "Gold", PlayStyle: "Aggressive", PlayTime: 10, ReportedTime: 1,
-        PlayedGame: ["PUBG"], MessageReceived: [{"content":"Hello, I'm interesting to form team with you, please dm me if you are interested.",
-            username:"user2", time:"2020/10/31"}], "CommentReceived": [{content: "Awesome Teammate!", username:"User2",
-            time: "2020/11/01", rate:9}, {content: "Would never play with him again.", username:"User3",
-            time: "2020/10/24", rate:1}]
-    }
-    console.log(user);
+    const user = await getUserByName(username);
+    // const user = {username: "user", password: "user", About: "Hello, I'm user.", Rate: 8,
+    //     Language: "English", Level: "Gold", PlayStyle: "Aggressive", PlayTime: 10, ReportedTime: 1,
+    //     PlayedGame: ["PUBG"], MessageReceived: [{"content":"Hello, I'm interesting to form team with you, please dm me if you are interested.",
+    //         username:"user2", time:"2020/10/31"}], "CommentReceived": [{content: "Awesome Teammate!", username:"User2",
+    //         time: "2020/11/01", rate:9}, {content: "Would never play with him again.", username:"User3",
+    //         time: "2020/10/24", rate:1}]
+    // }
+    // console.log(users);
 
     let profileDiv = document.createElement('div');
     profileDiv.className="d-flex justify-content-center"
@@ -69,14 +67,14 @@ async function renderUserProfile(username, userProfileDiv) {
 
 async function renderGallery(username, userGameDiv)
 {
-    const user = {username: "user", password: "user", About: "Hello, I'm user.", Rate: 8,
-        Language: "English", Level: "Gold", PlayStyle: "Aggressive", PlayTime: 10, ReportedTime: 1,
-        PlayedGame: ["PUBG"], MessageReceived: [{"content":"Hello, I'm interesting to form team with you, please dm me if you are interested.",
-            username:"user2", time:"2020/10/31"}], "CommentReceived": [{content: "Awesome Teammate!", username:"User2",
-            time: "2020/11/01", rate:9}, {content: "Would never play with him again.", username:"User3",
-            time: "2020/10/24", rate:1}]
-    }
-
+    // const user = {username: "user", password: "user", About: "Hello, I'm user.", Rate: 8,
+    //     Language: "English", Level: "Gold", PlayStyle: "Aggressive", PlayTime: 10, ReportedTime: 1,
+    //     PlayedGame: ["PUBG"], MessageReceived: [{"content":"Hello, I'm interesting to form team with you, please dm me if you are interested.",
+    //         username:"user2", time:"2020/10/31"}], "CommentReceived": [{content: "Awesome Teammate!", username:"User2",
+    //         time: "2020/11/01", rate:9}, {content: "Would never play with him again.", username:"User3",
+    //         time: "2020/10/24", rate:1}]
+    // }
+    const user = await getUserByName(username);
     let gallery = document.createElement('div')
     gallery.className = "gallery"
     for (let game of user.PlayedGame){
@@ -94,14 +92,14 @@ async function renderGallery(username, userGameDiv)
 }
 
 async function renderUserMessageBoard(username, userMessageDiv){
-    const user = {username: "user", password: "user", About: "Hello, I'm user.", Rate: 8,
-        Language: "English", Level: "Gold", PlayStyle: "Aggressive", PlayTime: 10, ReportedTime: 1,
-        PlayedGame: ["PUBG"], MessageReceived: [{"content":"Hello, I'm interesting to form team with you, please dm me if you are interested.",
-            username:"user2", time:"2020/10/31"}], "CommentReceived": [{content: "Awesome Teammate!", username:"User2",
-            time: "2020/11/01", rate:9}, {content: "Would never play with him again.", username:"User3",
-            time: "2020/10/24", rate:1}]
-    }
-
+    // const user = {username: "user", password: "user", About: "Hello, I'm user.", Rate: 8,
+    //     Language: "English", Level: "Gold", PlayStyle: "Aggressive", PlayTime: 10, ReportedTime: 1,
+    //     PlayedGame: ["PUBG"], MessageReceived: [{"content":"Hello, I'm interesting to form team with you, please dm me if you are interested.",
+    //         username:"user2", time:"2020/10/31"}], "CommentReceived": [{content: "Awesome Teammate!", username:"User2",
+    //         time: "2020/11/01", rate:9}, {content: "Would never play with him again.", username:"User3",
+    //         time: "2020/10/24", rate:1}]
+    // }
+    const user = await getUserByName(username);
     // const user = getUserByName(username);
     // console.log(user);
     for (let message of user.MessageReceived){
@@ -120,14 +118,14 @@ async function renderUserMessageBoard(username, userMessageDiv){
 }
 
 async function renderUserCommentBoard(username, userCommentDiv){
-    // const user = getUserByName(username);
-    const user = {username: "user", password: "user", About: "Hello, I'm user.", Rate: 8,
-        Language: "English", Level: "Gold", PlayStyle: "Aggressive", PlayTime: 10, ReportedTime: 1,
-        PlayedGame: ["PUBG"], MessageReceived: [{"content":"Hello, I'm interesting to form team with you, please dm me if you are interested.",
-            username:"user2", time:"2020/10/31"}], "CommentReceived": [{content: "Awesome Teammate!", username:"User2",
-            time: "2020/11/01", rate:9}, {content: "Would never play with him again.", username:"User3",
-            time: "2020/10/24", rate:1}]
-    }
+    const user = await getUserByName(username);
+    // const user = {username: "user", password: "user", About: "Hello, I'm user.", Rate: 8,
+    //     Language: "English", Level: "Gold", PlayStyle: "Aggressive", PlayTime: 10, ReportedTime: 1,
+    //     PlayedGame: ["PUBG"], MessageReceived: [{"content":"Hello, I'm interesting to form team with you, please dm me if you are interested.",
+    //         username:"user2", time:"2020/10/31"}], "CommentReceived": [{content: "Awesome Teammate!", username:"User2",
+    //         time: "2020/11/01", rate:9}, {content: "Would never play with him again.", username:"User3",
+    //         time: "2020/10/24", rate:1}]
+    // }
     for (let comment of user.CommentReceived){
         let commentDiv = document.createElement('div');
         commentDiv.innerHTML = `
@@ -153,5 +151,66 @@ async function renderUserCommentBoard(username, userCommentDiv){
             </div>`
         userCommentDiv.appendChild(commentDiv)
     }
+
+}
+
+async function getAllUsers() {
+    // Get all user from server
+    const url = `/users`
+    const request = new Request(url, {
+        method: 'get',
+        headers: {
+            'Accept': 'application/json, text/plain, */*',
+            'Content-Type': 'application/json'
+        },
+    })
+    const res = await fetch(request)
+    const json = await res.json()
+    if(json.error) {
+        alert(json.error)
+    } else if(json.redirect) {
+        window.location.href = json.redirect
+    }
+
+    return json
+}
+
+const getUserByName = async (name) => {
+    let allUsers = await getAllUsers();
+    allUsers = allUsers.users
+    const target = allUsers.filter(user => user.username === name);
+    //     .then((user) => {
+    //         if (user.username === name) {
+    //             return user
+    //         }
+    //     })
+    //     .catch((error) => {
+    //         res.status(500).send(error)
+    //     })
+    // console.log(target)
+    // //
+
+
+    if (target.length === 0) {
+        return {};
+    } else {
+        return target[0];
+    }
+
+};
+
+async function renderNavBar(username, NavBarDiv){
+    let NavBar = document.createElement('div')
+    NavBar.innerHTML = `
+        <ul class="navbar-nav ml-auto" id = "navBar">
+                <li class="nav-item">
+                    <a href="../profile/${username}" class="m-1 btn btn-outline-primary" >${username}</a>
+                </li>
+                <li class="nav-item">
+                  <a href="../signup" class="m-1 btn btn-outline-primary" >Sign up</a>
+                </li>
+        </ul>
+    `
+    NavBarDiv.appendChild(NavBar)
 
 }

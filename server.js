@@ -49,6 +49,16 @@ app.get('/user', (req, res) => {
 	res.sendFile(path.join(__dirname, '/public/profile.html'))
 })
 
+app.get('/users', async(req, res) => {
+	try {
+		const users = await User.find()
+		res.send({ users }) // can wrap students in object if want to add more properties
+	} catch(error) {
+		log(error)
+		res.status(500).send("Internal Server Error")
+	}
+})
+
 //routes and functions
 app.get('/posts', (req, res) => {
 	UserPost.find({}).then((docs) => {
@@ -67,7 +77,7 @@ app.get('/login', (req, res) => {
 })
 
 app.get('/signup', (req, res) => {
-	res.sendFile(path.join(__dirname, '/public/signup.html'))
+	res.sendFile(path.join(__dirname, '/public/register.html'))
 })
 
 // Debug Routes
