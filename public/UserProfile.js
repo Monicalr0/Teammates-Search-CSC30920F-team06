@@ -204,7 +204,7 @@ async function renderNavBar(username, NavBarDiv){
     NavBar.innerHTML = `
         <ul class="navbar-nav ml-auto" id = "navBar">
                 <li class="nav-item">
-                    <a href="../profile/${username}" class="m-1 btn btn-outline-primary" >${username}</a>
+                    <a href="../${username}" class="m-1 btn btn-outline-primary" >${username}</a>
                 </li>
                 <li class="nav-item">
                   <a href="../signup" class="m-1 btn btn-outline-primary" >Sign up</a>

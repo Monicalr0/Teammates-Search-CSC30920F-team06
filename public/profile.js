@@ -8,8 +8,8 @@ const username = "user"
 const user = {username: "user", password: "user", About: "Hello, I'm user.", Rate: 8,
 	Language: "English", Level: "Gold", PlayStyle: "Aggressive", PlayTime: 10, ReportedTime: 1,
 	PlayedGame: ["PUBG"], MessageReceived: [{"content":"Hello, I'm interesting to form team with you, please dm me if you are interested.",
-		username:"user2", time:"2020/10/31"}], "CommentReceived": [{content: "Awesome Teammate!", username:"User2",
-		time: "2020/11/01", rate:9}, {content: "Would never play with him again.", username:"User3",
+		username:"user2", time:"2020/10/31"}], "CommentReceived": [{content: "Awesome Teammate!", username:"user2",
+		time: "2020/11/01", rate:9}, {content: "Would never play with him again.", username:"user3",
 		time: "2020/10/24", rate:1}]
 }
 
@@ -120,9 +120,9 @@ function editInfo(e)
 
 function report(username) {
   alert('report success');
-  let reported = getUserByName(username);
-  reported.status = "Reported"
-	// save to json
+  // let reported = getUserByName(username);
+  // reported.status = "Reported"
+	// // save to json
   
 }
 
