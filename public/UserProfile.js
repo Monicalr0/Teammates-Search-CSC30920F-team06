@@ -65,6 +65,64 @@ async function renderUserProfile(username, userProfileDiv) {
 
 }
 
+async function renderOthersUserProfile(username, userProfileDiv) {
+
+    const user = await getUserByName(username);
+    // const user = {username: "user", password: "user", About: "Hello, I'm user.", Rate: 8,
+    //     Language: "English", Level: "Gold", PlayStyle: "Aggressive", PlayTime: 10, ReportedTime: 1,
+    //     PlayedGame: ["PUBG"], MessageReceived: [{"content":"Hello, I'm interesting to form team with you, please dm me if you are interested.",
+    //         username:"user2", time:"2020/10/31"}], "CommentReceived": [{content: "Awesome Teammate!", username:"User2",
+    //         time: "2020/11/01", rate:9}, {content: "Would never play with him again.", username:"User3",
+    //         time: "2020/10/24", rate:1}]
+    // }
+    // console.log(users);
+
+    let profileDiv = document.createElement('div');
+    profileDiv.className="d-flex justify-content-center"
+    profileDiv.innerHTML = `
+    <div class="card bg-light ">
+            <img src="img/user.jpg" alt="User Profile Picture", class = "userProfilePicture">
+            <li class = "socialList">
+                <!-- this will be link to user account page  -->
+                <a href="https://www.facebook.com/" class= "fa fa-facebook inline"></a><strong> ${user.username} </strong>
+                <a href="https://twitter.com/home" class= "fa fa-twitter inline"></a> <strong> ${user.username} </strong>
+            </li>
+            
+            <div class="text-align:center">
+                    <a href="commentPage.html" class="btn btn-primary w-50 ">Comment</a>
+            </div>
+    </div>
+
+        <div class="card">
+  <div class="userInfoCard" id="userInfo">
+           <p> 
+            <strong>Username: </strong> <span>${user.username}</span>
+           <br><br>
+           <strong>About: </strong> <span>${user.About}</span>
+           <br><br>
+            <strong>Rate: </strong> <i class="fas fa-star"></i> ${user.Rate}
+           <br><br>
+           <strong>Language: </strong> <span>${user.Language}</span>
+            <br><br>
+            <strong>Level:</strong> <span>${user.Level}</span>
+            <br><br>
+            <strong>PlayStyle:</strong> <span>${user.PlayStyle}</span>
+            <br><br>
+            <strong>Played Times: </strong> <span> ${user.PlayTime} </span>
+            <strong>Reported Times: </strong> <span> ${user.ReportedTime} </span>
+            <br><br>
+            <strong>Played Game: </strong> 
+            </p>
+        </div>
+    </div>
+   </div>
+    `;
+
+    userProfileDiv.appendChild(profileDiv);
+
+
+}
+
 async function renderGallery(username, userGameDiv)
 {
     // const user = {username: "user", password: "user", About: "Hello, I'm user.", Rate: 8,
@@ -205,6 +263,22 @@ async function renderNavBar(username, NavBarDiv){
         <ul class="navbar-nav ml-auto" id = "navBar">
                 <li class="nav-item">
                     <a href="../${username}" class="m-1 btn btn-outline-primary" >${username}</a>
+                </li>
+                <li class="nav-item">
+                  <a href="../signup" class="m-1 btn btn-outline-primary" >Sign up</a>
+                </li>
+        </ul>
+    `
+    NavBarDiv.appendChild(NavBar)
+
+}
+
+async function renderOthersNavBar(username, NavBarDiv){
+    let NavBar = document.createElement('div')
+    NavBar.innerHTML = `
+        <ul class="navbar-nav ml-auto" id = "navBar">
+                <li class="nav-item">
+                    <a href="../login" class="m-1 btn btn-outline-primary" >login</a>
                 </li>
                 <li class="nav-item">
                   <a href="../signup" class="m-1 btn btn-outline-primary" >Sign up</a>

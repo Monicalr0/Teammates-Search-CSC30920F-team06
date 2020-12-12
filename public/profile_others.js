@@ -1,71 +1,44 @@
-// import { createPopper } from '@popperjs/core';
+let searchForm, messageForm, updateForm;
 
-// const popcorn = document.querySelector('#commentUser');
-// const tooltip = document.querySelector('#tooltip');
-
-// createPopper(popcorn, tooltip, {
-//   placement: 'left-start',
-// });
-
-let userInfo = [];
-let userComments = [];
-let searchForm, messageForm, updateForm, commentTypeForm, commentCard;
-
-const Message = function(content, name) {
-	this.content = content;
-	this.name = name;
-	this.Date = new Date();
-
+//Find the user name based on current URL.
+const pathArray = window.location.pathname.split('/');
+const username = "user"
+// let username = pathArray[pathArray.length-1];
+// const user = getUserByName(username);
+const user = {username: "user", password: "user", About: "Hello, I'm user.", Rate: 8,
+	Language: "English", Level: "Gold", PlayStyle: "Aggressive", PlayTime: 10, ReportedTime: 1,
+	PlayedGame: ["PUBG"], MessageReceived: [{"content":"Hello, I'm interesting to form team with you, please dm me if you are interested.",
+		username:"user2", time:"2020/10/31"}], "CommentReceived": [{content: "Awesome Teammate!", username:"user2",
+		time: "2020/11/01", rate:9}, {content: "Would never play with him again.", username:"user3",
+		time: "2020/10/24", rate:1}]
 }
 
 async function initListings(e) {
-	// searchForm = document.forms["searchForm"];
-	// searchForm.addEventListener("submit", searchUsers);
+	searchForm = document.forms["searchForm"];
+	searchForm.addEventListener("submit", searchUsers);
+
+	let userMessageDiv = document.querySelector("#messageBoard");
+	await renderUserMessageBoard(username,userMessageDiv)
+
+	let userProfileDiv = document.querySelector("#userProfile");
+	await renderOthersUserProfile(username, userProfileDiv)
+
+	let userGameDiv = document.querySelector("#userInfo");
+	await renderGallery(username, userGameDiv)
+
+	let userCommentDiv = document.querySelector("#Comments");
+	await renderUserCommentBoard(username, userCommentDiv)
+
+	let NavBar = document.querySelector("#AccountMenu")
+	const cur = "user";
+	await renderOthersNavBar(cur, NavBar)
 
 	messageForm = document.forms["messageForm"];
 	messageForm.addEventListener("submit", getMessage);
 
-	// updateForm = document.forms["updateForm"];
-	// updateForm.addEventListener("submit", editInfo);	
- 
-	// commentTypeForm = document.forms["commentTypeForm"];
-	// commentTypeForm.addEventListener("change", filterComment);
+	updateForm = document.forms["updateForm"];
+	updateForm.addEventListener("submit", editInfo);
 
-	// commentCard = document.querySelector("#commentCard")
-
-
-	// Get all user Info from server
-	userInfo = [
-		{
-			"name":"user",
-			"About":"Hi!",
-			"Rate": 8,
-			"Language":"English",
-			"level": "Gold",
-			"playstyle": "Aggressive",
-			"ReportedTims": 1,
-			"ReportedPercentage": 10
-		}
-	];
-
-	userComments = [
-		{
-			"name": "user2",
-			"userImage": 2,
-			"date": "2020/11/01",
-			"rate": 9,
-			"comment": "Awesome Teammate!"
-
-		},
-
-		{
-			"name": "user3",
-			"userImage": 3,
-			"date": "2020/10/24",
-			"rate": 0,
-			"comment": "Would never play with him again."
-		}
-	];
 }
 
 window.addEventListener("load", initListings);
@@ -75,15 +48,26 @@ function getMessage(e) {
 
 	// Get message
 	const content = document.querySelector('#newMessage').value
-	console.log("getting content")
-	const user = "Un Logged In User"; //default is the one who login, which is user in this page. 	
-	displayMessage(content, user)
+	const sender = "user"; //default is the one who login, which is user in this page.
+	const date = new Date()
+	const month = date.getUTCMonth() + 1; //months from 1-12
+	const day = date.getDate();
+	const year = date.getFullYear();
+
+	const today = year + "/" + month + "/" + day;
+	user.MessageReceived.push({
+		content:content,
+		username:sender,
+		time: today
+	})
+	console.log(user) //change to save to json
+	displayMessage(content, sender)
 }
 
 function displayMessage(content, user)
 {
 	const MessageBoard = document.getElementById('message')
-	console.log(MessageBoard.childNodes[1]);
+	// console.log(MessageBoard.childNodes[1]);
 	const date = new Date();
 	const month = date.getUTCMonth() + 1; //months from 1-12
 	const day = date.getDate();
@@ -100,96 +84,59 @@ function displayMessage(content, user)
 	MessageBoard.append(newMessage);
 }
 
-function report() {
-  alert('report success');
-  
+function editInfo(e)
+{
+	e.preventDefault()
+	// first get the input
+	const input_about = updateForm.querySelector('#newAbout').value
+	const input_lang = updateForm.querySelector('#newLan').value
+	const input_playstyle = updateForm.querySelector('#newPlayStyle').value
+
+
+
+	const new_about=document.createTextNode(input_about)
+	const span_about=document.createElement("span")
+	span_about.appendChild(new_about)
+	const user_info = document.querySelector("#userInfo")
+	user_info.children[0].replaceChild(span_about,user_info.children[0].children[5])
+	user.About = new_about
+
+	const new_lang=document.createTextNode(input_lang)
+	const span_lang=document.createElement("span")
+	span_lang.appendChild(new_lang)
+	const user_lan = document.querySelector("#userInfo")
+	user_info.children[0].replaceChild(span_lang,user_info.children[0].children[13])
+	user.Language = new_lang
+
+	const new_play=document.createTextNode(input_playstyle)
+	const span_play=document.createElement("span")
+	span_play.appendChild(new_play)
+	const user_play = document.querySelector("#userInfo")
+	user_info.children[0].replaceChild(span_play,user_info.children[0].children[21])
+	user.PlayStyle = new_play
+
+	console.log(user)
 }
 
-// async function filterComment(e) {
-// 	const checkedRate = commentTypeForm.querySelectorAll("input:checked");
-// 	console.log(checkedRate);
+function report(username) {
+	alert('report success');
+	// let reported = getUserByName(username);
+	// reported.status = "Reported"
+	// // save to json
 
-// 	const newComments = userComments.filter(comment => isValidComment(comment, checkedRate));
+}
 
-// 	clearUserPosts(commentCard);
-// 	for(var comment of newComments) await printComment(comment, commentCard);
-// }
+async function searchUsers(e) {
+	e.preventDefault()
+	try{
+		// const input_user= searchForm.querySelector('#newUser').value
+		// window.location = "./profile/input_users"
+		// window.open("./profile/input_users")
+	}
+	catch (err)
+	{
+		console.log(err)
+	}
 
-// function isValidComment(comment, checkedRate) {
 
-// 	let checkedRateMatch = checkedRate.length === 0;
-// 	for(let i = 0; i < checkedRate.length; i++) {
-// 		if(checkedRate[i].value == "All") {
-// 			const maxAllowedRate = 10;
-// 			const minAllowedRate = 0;
-// 			break;
-// 		}
-// 		else if(checkedRate[i].value == "Rate > 5")
-// 		{
-// 			const maxAllowedRate = 10;
-// 			const minAllowedRate = 5;
-// 			break;
-// 		}
-// 		else{
-// 			const maxAllowedRate = 5;
-// 			const minAllowedRate = 0;
-// 			break;
-// 		}
-// 	}
-
-// 	// console.log(checkedRate);
-// 	// if(checkedRate == "All")
-// 	// {
-		
-// 	// }
-// 	// else if(checkedRate == "Rate > 5")
-// 	// {
-// 	// 	const maxAllowedRate = 10;
-// 	// 	const minAllowedRate = 5;
-// 	// }
-// 	// else{
-// 	// 	const maxAllowedRate = 5;
-// 	// 	const minAllowedRate = 0;
-// 	// }
-
-// 	let ratingMatch = minAllowedRate <= comment.rate && comment.rate <= maxAllowedRate;
-
-// 	return ratingMatch;
-// }
-
-// function clearComment(commentCard) {
-// 	// delete all comment post entries in DOM
-// 	while(commentCard.hasChildNodes())
-// 		commentCard.removeChild(commentCard.lastChild);
-// }
-
-// async function printComment(comment, commentCard) {
-// 	const commentDiv = document.createElement("div");
-// 	// let link = userPost.name;
-// 	// if(link)
-// 	// 	link = 'http://profile/' + link;
-// 	commentDiv.className = "card-horizontal";
-// 	commentDiv.innerHTML = `
-// 	<div class="image-square-wrapper">
-//     	<img src='user${comment.userImage}.jpg, alt="User Profile Picture", class = "
-//         othersProfilePicture" id = 'commentUser'>
-//     </div>
-
-//     <div class = "card-body">
-//     	<div class = "commentUserInfo">
-//     		<strong>${comment.name}</strong> 
-//     		<span class="commentDate">${comment.date}</span>
-//     		<br>
-//     		<strong>Rate:</strong><span> <i class="fas fa-star"></i> ${comment.rate} </span>
-//     	</div>
-//     	<hr>
-//     	<div>
-//     		<p class = "commentContent"> 
-//         	${comment.comment}
-//     		</p>
-//     		<a href="#" class="btn btn-outline-secondary btn-sm" id= reportComment>Report</a>
-//     	</div>
-//     </div>`;
-
-// 	commentCard.appendChild(commentDiv);
-// }
+}

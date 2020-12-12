@@ -49,6 +49,10 @@ app.get('/user', (req, res) => {
 	res.sendFile(path.join(__dirname, '/public/profile.html'))
 })
 
+app.get('/others', (req, res) => {
+	res.sendFile(path.join(__dirname, '/public/profile_others.html'))
+})
+
 app.get('/users', async(req, res) => {
 	try {
 		const users = await User.find()
