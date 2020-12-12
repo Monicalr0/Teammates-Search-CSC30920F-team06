@@ -34,7 +34,7 @@ at message board. The user of this profile can edit the profile's About, Languag
 <br>               
 <strong> admin_user.html and admin_comment.html:</strong>
 <br>
-both pages are belongs to admin and only admin can access. after login using admin account user will be directed to admin user page. admin can switch between two pages using right corner [user]/[comment] button. In the admin_user page admin can see all the user here and admin can filter the user by its status. In the admin comments page admin can see all the comments and can see which one is reported then handle those reports. 
+both pages are belongs to admin and only admin can access. after login using admin account user will be directed to admin user page. admin can switch between two pages using right corner [user]/[comment] button. In the admin_user page admin can see all the user here and admin can filtering the user by its status.
 
 
 <br>               
