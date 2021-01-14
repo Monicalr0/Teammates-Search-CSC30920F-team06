@@ -1,7 +1,7 @@
 # TeammateSearch
-This is a team project for CSC309 at UofT, the web development. This is the original version of the final result of our team, with some small issue on the heroku part which will be fixed later.
+This is a team project for CSC309 at UofT, the web development. This is the original version of the final result of our team, with some small issue on the heroku part which will be fixed later. (This version is a mirrored version as the original version are set to be private). 
 
-#### Original Readme, credit to my teammate. 
+## Original Readme, credit to my teammate. 
 <strong>WebApp name: Teammates search</strong><br> 
 <h2><strong>Deployed website:</strong></h2><br>
 https://salty-scrubland-97536.herokuapp.com/
