@@ -10,7 +10,7 @@ Future improvement can be view at _ (still working on, add the address later LOL
 ## Original Readme, credit to my teammate. 
 <strong>WebApp name: Teammates search</strong><br> 
 <h2><strong>Deployed website:</strong></h2><br>
-https://salty-scrubland-97536.herokuapp.com/
+<del>https://salty-scrubland-97536.herokuapp.com/</del> 
 <h2><strong>How to use:</strong></h2>
 The user could use this webapp to search for teammates when they want to play a Multiplayer Online Battle Arena Video Games such as LOL.
 After signed up an account and logged in, user could use index page to search for teammates. User could use sidebar to get a more specific search result, such as choose different level, rating and playstyle as they want.<br>
