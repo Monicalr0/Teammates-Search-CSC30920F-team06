@@ -2,9 +2,10 @@
 This is a team project for CSC309 at UofT, the web development. This is the original version of the final result of our team, with some small issue on the heroku part which will be fixed later. (This version is a mirrored version as the original version are set to be private). 
 
 #### 2021/05/25
+
 Fixed small bug in database connected issue. Now the current version can be view at https://agile-journey-69579.herokuapp.com/ (if there is display error please add ‘/seed’ after this address and re-enter it). The page I mainly worked on can be view at https://agile-journey-69579.herokuapp.com/user.
 
-Future improvement can be view at _ (still working on, add the address later LOL）
+Future improvement can be view at _ (still working on, add the address later LOL). Some possible change would be interaction between website, finish admin page, improve database and remove hard-coded part. 
 
 ## Original Readme, credit to my teammate. 
 <strong>WebApp name: Teammates search</strong><br> 
